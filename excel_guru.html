@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 02: Excel Guru & Data Modeling</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: #334155; margin: 0; display: flex; }
+        .sidebar { width: 300px; background: #064e3b; color: white; height: 100vh; position: fixed; padding: 2rem; }
+        .content { margin-left: 300px; padding: 4rem; max-width: 900px; }
+        
+        .guru-section { margin-bottom: 4rem; padding: 2rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; }
+        h2 { color: #064e3b; border-bottom: 2px solid #059669; padding-bottom: 0.5rem; }
+        
+        .technical-spec { 
+            background: #1e293b; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; 
+            font-family: 'Courier New', monospace; font-size: 0.9rem; margin: 1rem 0;
+        }
+        
+        .task-box { 
+            background: #fff7ed; border: 2px dashed #f97316; padding: 1.5rem; border-radius: 8px; 
+            margin-top: 2rem;
+        }
+        
+        .badge { background: #059669; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>Module 02</h3>
+    <h1>Excel Guru</h1>
+    <p>Target: Financial Analyst / Data Auditor Level</p>
+    <hr style="opacity: 0.2; margin: 2rem 0;">
+    <ul style="list-style: none; padding: 0;">
+        <li>🔹 Lookup Architecture</li>
+        <li>🔹 Logic Nesting</li>
+        <li>🔹 Power Query (ETL)</li>
+        <li>🔹 Data Modeling</li>
+    </ul>
+    <br>
+    <a href="index.html" style="color: #6ee7b7; text-decoration: none;">← Back to Hub</a>
+</div>
+
+<div class="content">
+    <section class="guru-section">
+        <span class="badge">Level: Expert</span>
+        <h2>1. Advanced Lookup Architecture</h2>
+        <p>A Guru never uses <code>VLOOKUP</code>. We use <code>XLOOKUP</code> or <code>INDEX/MATCH</code> for non-volatile, bi-directional data retrieval.</p>
+        
+        <h4>The "Why":</h4>
+        <p>VLOOKUP breaks if you insert a column. INDEX/MATCH is dynamic—it maps the memory address of the data instead of a static number.</p>
+        
+        <div class="technical-spec">
+            Syntax: =INDEX(return_range, MATCH(lookup_value, lookup_range, 0))
+        </div>
+        
+        <ul>
+            <li><strong>Exact Match vs. Wildcards:</strong> Using `*` for partial text searches.</li>
+            <li><strong>2-Way Lookups:</strong> Finding data at the intersection of a specific Row AND Column.</li>
+        </ul>
+    </section>
+
+    <section class="guru-section">
+        <span class="badge">Level: Architect</span>
+        <h2>2. The Power Query Revolution (ETL)</h2>
+        <p>In the real market, data is messy. Gurus don't clean data manually; they build <strong>ETL Pipelines</strong> (Extract, Transform, Load).</p>
+        
+        <div class="task-box">
+            <strong>Guru Task 2.1: Automated Cleanup</strong>
+            <ol>
+                <li>Import a "dirty" CSV with inconsistent dates and extra spaces.</li>
+                <li>Use <em>Power Query Editor</em> to "Trim" and "Clean" text.</li>
+                <li>Pivot/Unpivot columns to normalize the data.</li>
+                <li>Hit "Refresh" to apply all steps to a brand new file instantly.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="guru-section">
+        <h2>3. Array Formulas & Dynamic Spill</h2>
+        <p>Mastering the new Excel engine (`#` notation).</p>
+        <div class="technical-spec">
+            =SORT(FILTER(A2:C100, B2:B100 > 500), 3, -1)
+        </div>
+        <p>This single line replaces hours of manual sorting and filtering. It creates a "Spill Range" that updates automatically as data grows.</p>
+    </section>
+
+    <div class="task-box" style="background: #eff6ff; border-color: #3b82f6;">
+        <h3>🏁 Weekly Guru Project: The Dashboard</h3>
+        <p>The student must build a <strong>Dynamic Financial Dashboard</strong> that:</p>
+        <ul>
+            <li>Uses 100% Formulas (No hard-coded numbers).</li>
+            <li>Features a "Slicer" that updates 4 charts simultaneously.</li>
+            <li>Includes a "Data Validation" dropdown to switch between departments.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

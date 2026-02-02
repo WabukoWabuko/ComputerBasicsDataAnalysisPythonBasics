@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 03: Statistical Analysis & Data Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --stat-purple: #6d28d9;
+            --stat-light: #f5f3ff;
+            --text: #1e293b;
+            --sidebar-bg: #1e1b4b;
+        }
+        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; background: #fcfcfd; color: var(--text); }
+        
+        .sidebar { width: 300px; background: var(--sidebar-bg); color: white; height: 100vh; position: fixed; padding: 2rem; }
+        .content { margin-left: 300px; padding: 4rem; max-width: 950px; }
+        
+        .guru-box { 
+            background: white; border: 1px solid #e2e8f0; border-radius: 16px; 
+            padding: 2.5rem; margin-bottom: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+        }
+        
+        h2 { color: var(--stat-purple); font-size: 1.8rem; margin-top: 0; }
+        .math-block { 
+            background: var(--stat-light); border-left: 5px solid var(--stat-purple); 
+            padding: 1.5rem; margin: 1.5rem 0; font-family: 'Fira Code', monospace;
+        }
+
+        .visual-demo {
+            display: flex; gap: 10px; align-items: flex-end; height: 100px; padding: 20px;
+            background: #f1f5f9; border-radius: 8px; margin: 1rem 0;
+        }
+        .bar { background: var(--stat-purple); width: 30px; transition: 0.5s; }
+        
+        .warning-box {
+            background: #fff1f2; border: 1px solid #fecdd3; color: #9f1239;
+            padding: 1.2rem; border-radius: 8px; margin-top: 1rem;
+        }
+        
+        .badge { background: var(--stat-purple); color: white; padding: 4px 12px; border-radius: 99px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <small style="letter-spacing: 2px;">MODULE 03</small>
+    <h1 style="color: #c4b5fd;">Statistical Analysis</h1>
+    <p style="opacity: 0.8; font-size: 0.9rem;">From counting numbers to predicting outcomes.</p>
+    <hr style="opacity: 0.1; margin: 2rem 0;">
+    <nav>
+        <p>• Central Tendency</p>
+        <p>• Distribution & Variance</p>
+        <p>• Correlation vs Causation</p>
+        <p>• Sampling Theory</p>
+    </nav>
+    <br>
+    <a href="index.html" style="color: #a5b4fc; text-decoration: none; font-weight: bold;">← Return to Roadmap</a>
+</div>
+
+<div class="content">
+    <div class="guru-box">
+        <span class="badge">Core Concept</span>
+        <h2>1. The "Big Three" (Mean, Median, Mode)</h2>
+        <p>A Guru knows that the <strong>Average (Mean)</strong> can be a lie if there are "Outliers."</p>
+        
+        <div class="math-block">
+            Example: 5 people earn $20k, but the Boss earns $500k. <br>
+            Average: $100k (Misleading!)<br>
+            Median: $20k (The Truth)
+        </div>
+        
+        <p><strong>Teaching Tip:</strong> Ask the student to calculate the median of a list of numbers where one number is 100x larger than the rest.</p>
+    </div>
+
+    <div class="guru-box">
+        <span class="badge">Advanced Architecture</span>
+        <h2>2. Standard Deviation & Variance</h2>
+        <p>This measures <strong>Consistency</strong>. In the market, high variance means high risk.</p>
+        
+        <div class="visual-demo">
+            <div class="bar" style="height: 40%;"></div>
+            <div class="bar" style="height: 42%;"></div>
+            <div class="bar" style="height: 39%;"></div>
+            <div class="bar" style="height: 41%;"></div>
+            <p style="font-size: 0.7rem;">Low Variance (Stable)</p>
+        </div>
+        <div class="visual-demo">
+            <div class="bar" style="height: 10%;"></div>
+            <div class="bar" style="height: 90%;"></div>
+            <div class="bar" style="height: 20%;"></div>
+            <div class="bar" style="height: 85%;"></div>
+            <p style="font-size: 0.7rem;">High Variance (Volatile)</p>
+        </div>
+    </div>
+
+    <div class="guru-box">
+        <span class="badge">The Analyst's Bible</span>
+        <h2>3. Correlation vs. Causation</h2>
+        <p>Just because two things happen together doesn't mean one caused the other.</p>
+        
+        <div class="warning-box">
+            <strong>The Classic Guru Example:</strong> Ice cream sales and Shark attacks both go up in the summer. Does ice cream cause shark attacks? No. The hidden factor (lurking variable) is <strong>Heat</strong>.
+        </div>
+    </div>
+
+    <div class="guru-box" style="border-top: 6px solid #10b981;">
+        <h2>🚀 Guru Task: The "Data Audit"</h2>
+        <p>Provide the student with a dataset of "Employee Performance."</p>
+        <ol>
+            <li>Identify the <strong>Outliers</strong> (Employees performing too well or too poorly).</li>
+            <li>Determine if <strong>Years of Experience</strong> has a positive <strong>Correlation</strong> with <strong>Salary</strong>.</li>
+            <li>Predict next month's sales based on a 3-month <strong>Moving Average</strong>.</li>
+        </ol>
+    </div>
+</div>
+
+<script>
+    // Visual interaction: Animate bars on load
+    window.onload = () => {
+        document.querySelectorAll('.bar').forEach(bar => {
+            const h = bar.style.height;
+            bar.style.height = '0%';
+            setTimeout(() => { bar.style.height = h; }, 500);
+        });
+    }
+</script>
+
+</body>
+</html>

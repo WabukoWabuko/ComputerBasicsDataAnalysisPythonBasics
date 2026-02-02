@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 01: Computer Architecture & Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        :root { --pro-blue: #0f172a; --accent: #3b82f6; --bg: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; background: var(--bg); }
+        .sidebar { width: 300px; background: var(--pro-blue); color: white; height: 100vh; position: fixed; padding: 2rem; }
+        .content { margin-left: 300px; padding: 4rem; max-width: 900px; }
+        .guru-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .cmd-line { background: #1e293b; color: #38bdf8; padding: 1rem; border-radius: 6px; font-family: 'Fira Code', monospace; }
+        .badge { background: #3b82f6; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+        h2 { color: var(--pro-blue); border-left: 4px solid var(--accent); padding-left: 1rem; }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <small>MODULE 01</small>
+    <h2>System Architecture</h2>
+    <hr style="opacity:0.2; margin: 2rem 0;">
+    <p>Topics: Hardware abstraction, OS Kernels, CLI, and Networking.</p>
+    <a href="index.html" style="color: #60a5fa; text-decoration: none;">← Return to Roadmap</a>
+</div>
+<div class="content">
+    <div class="guru-card">
+        <span class="badge">DEEP DIVE</span>
+        <h2>The Kernel and the Shell</h2>
+        <p>A "Guru" understands that the Windows you see is just a <strong>GUI</strong> (Graphical User Interface). Underneath sits the <strong>Kernel</strong>.</p>
+        <ul>
+            <li><strong>The Kernel:</strong> The manager. It decides which app gets to use the CPU or RAM.</li>
+            <li><strong>The Shell:</strong> The interface that lets humans talk to the Kernel.</li>
+        </ul>
+    </div>
+
+    <div class="guru-card">
+        <h2>The Command Line Interface (CLI)</h2>
+        <p>Gurus don't use folders to move files; they use the terminal for speed and automation.</p>
+        <div class="cmd-line">
+            > cd Desktop/Project_X<br>
+            > mkdir assets scripts docs<br>
+            > dir /s
+        </div>
+        <p><small>Try explaining `mkdir` (Make Directory) and `cd` (Change Directory) to the student.</small></p>
+    </div>
+
+    <div class="guru-card" style="border-top: 4px solid #ef4444;">
+        <h2>Networking & The Web Guru</h2>
+        <p>How does the internet *actually* work? Explain the <strong>DNS</strong> (The Phonebook of the Internet).</p>
+        <p><strong>Step-by-Step:</strong><br>
+        1. User types <em>google.com</em>.<br>
+        2. DNS converts it to an <strong>IP Address</strong> (e.g., 142.250.190.46).<br>
+        3. Your computer sends a <strong>Request</strong>; the server sends a <strong>Response</strong> (HTML).</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 04: Python Engineering</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; background: #fafafa; }
+        .sidebar { width: 300px; background: #374151; color: white; height: 100vh; position: fixed; padding: 2rem; }
+        .content { margin-left: 300px; padding: 4rem; max-width: 900px; }
+        .code-block { background: #111827; color: #e5e7eb; padding: 2rem; border-radius: 12px; font-family: 'Fira Code', monospace; line-height: 1.5; }
+        .keyword { color: #f472b6; }
+        .func { color: #60a5fa; }
+        .string { color: #34d399; }
+        .comment { color: #9ca3af; font-style: italic; }
+        .guru-task { background: #eef2ff; border-left: 6px solid #4338ca; padding: 2rem; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <small>MODULE 04</small>
+    <h1>Python Guru</h1>
+    <p>Target: Automation & Data Engineering.</p>
+    <a href="index.html" style="color: #93c5fd; text-decoration: none;">← Roadmap</a>
+</div>
+<div class="content">
+    <h2>Data Structures: The Guru's Toolbox</h2>
+    <p>Basic variables store one value. <strong>Lists</strong> and <strong>Dictionaries</strong> store thousands.</p>
+    
+    <div class="code-block">
+<span class="comment"># A Dictionary (Key-Value Pairs)</span>
+user_data = {
+    <span class="string">"name"</span>: <span class="string">"Alice"</span>,
+    <span class="string">"role"</span>: <span class="string">"Data Analyst"</span>,
+    <span class="string">"projects"</span>: [<span class="string">"Sales"</span>, <span class="string">"Growth"</span>]
+}
+
+<span class="comment"># Logic: The Loop</span>
+<span class="keyword">for</span> project <span class="keyword">in</span> user_data[<span class="string">"projects"</span>]:
+    <span class="func">print</span>(f<span class="string">"Checking status of: {project}"</span>)
+    </div>
+
+    <div class="guru-task">
+        <h3>🚀 Real-World Task: The Automator</h3>
+        <p><strong>Scenario:</strong> You have 500 Excel files. Doing it manually takes 10 hours.</p>
+        <p><strong>The Guru Solution:</strong> Write a Python script using the <code>pandas</code> library to open all 500 files, calculate the total sales, and save it into a "Master Report" in 3 seconds.</p>
+        <p><em>Focus on teaching the "Why" before the syntax.</em></p>
+    </div>
+</div>
+</body>
+</html>

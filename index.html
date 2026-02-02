@@ -3,506 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Foundations | Tutor Reference Guide</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>GuruPath | The Full Spectrum Curriculum</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-light: #dbeafe;
-            --secondary: #64748b;
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --accent: #f59e0b;
-            --success: #10b981;
-            --border: #e2e8f0;
-            --sidebar-width: 280px;
-            --radius: 12px;
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --guru-gold: #fbbf24;
+            --pro-blue: #0f172a;
+            --depth-green: #10b981;
+            --text-light: #f8fafc;
+            --card-bg: #ffffff;
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            display: flex;
-            min-height: 100vh;
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f5f9; margin: 0; display: flex; }
+        
+        /* Sidebar Navigation */
+        nav { width: 300px; height: 100vh; background: var(--pro-blue); color: white; position: fixed; padding: 2rem 1rem; }
+        .nav-header { border-bottom: 1px solid #334155; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .nav-header h2 { font-size: 1.5rem; color: var(--guru-gold); }
+        
+        .module-link { 
+            display: block; color: #94a3b8; text-decoration: none; padding: 1rem; 
+            border-radius: 8px; margin-bottom: 0.5rem; transition: 0.3s;
         }
+        .module-link:hover { background: #1e293b; color: white; }
+        .module-link.active { background: var(--guru-gold); color: var(--pro-blue); font-weight: bold; }
 
-        /* --- Sidebar Navigation --- */
-        nav {
-            width: var(--sidebar-width);
-            background: var(--surface);
-            border-right: 1px solid var(--border);
-            height: 100vh;
-            position: fixed;
-            overflow-y: auto;
-            padding: 2rem 1rem;
-            z-index: 100;
+        /* Main Content */
+        main { margin-left: 300px; padding: 4rem; width: 100%; }
+        .hero { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        h1 { font-size: 3rem; color: var(--pro-blue); margin-top: 0; }
+        
+        .roadmap { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        .phase-card { 
+            background: white; padding: 2rem; border-radius: 15px; border-left: 5px solid var(--pro-blue);
+            transition: transform 0.3s;
         }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            padding: 0 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-group { margin-bottom: 1.5rem; }
-        .nav-group-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            font-weight: 700;
-            padding: 0 1rem 0.5rem;
-        }
-
-        .nav-link {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: var(--text-main);
-            text-decoration: none;
-            border-radius: var(--radius);
-            font-size: 0.95rem;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .nav-link:hover { background: var(--primary-light); color: var(--primary); }
-        .nav-link.active { background: var(--primary); color: white; font-weight: 600; }
-
-        /* --- Main Content --- */
-        main {
-            margin-left: var(--sidebar-width);
-            flex: 1;
-            padding: 3rem;
-            max-width: 1000px;
-        }
-
-        .module-section { display: none; animation: fadeIn 0.4s ease-out; }
-        .module-section.active { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-main); letter-spacing: -0.02em; }
-        .intro-lead { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 3rem; }
-
-        /* --- UI Components --- */
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow);
-        }
-
-        .concept-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--primary-light);
-            color: var(--primary);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .analogy {
-            background: #fffbeb;
-            border-left: 4px solid var(--accent);
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-        }
-
-        .analogy::before { content: "💡 Analogy: "; font-weight: 700; font-style: normal; color: var(--accent); }
-
-        /* Step-by-Step Visualization */
-        .step-list { list-style: none; counter-reset: my-counter; }
-        .step-item {
-            position: relative;
-            padding-left: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        .step-item::before {
-            content: counter(my-counter);
-            counter-increment: my-counter;
-            position: absolute;
-            left: 0; top: 0;
-            width: 2rem; height: 2rem;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center; justify-content: center;
-            font-weight: 700;
-        }
-
-        /* Keyboard Key Styling */
-        kbd {
-            background: #f1f5f9;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            box-shadow: 0 2px 0 #cbd5e1;
-            color: #334155;
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 2px 6px;
-            margin: 0 2px;
-        }
-
-        /* Code Blocks */
-        pre {
-            background: #1e293b;
-            color: #f8fafc;
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            overflow-x: auto;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-            margin: 1rem 0;
-        }
-
-        .code-comment { color: #94a3b8; }
-        .code-keyword { color: #f472b6; }
-        .code-func { color: #38bdf8; }
-        .code-string { color: #fbbf24; }
-
-        /* Hardware Visualizer */
-        .hardware-box {
-            display: flex;
-            gap: 10px;
-            background: #e2e8f0;
-            padding: 20px;
-            border-radius: 12px;
-            justify-content: space-around;
-            text-align: center;
-        }
-        .hw-component {
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            flex: 1;
-            border-bottom: 4px solid var(--primary);
-        }
-
-        /* Custom Accordion */
-        .accordion {
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        .accordion-header {
-            background: var(--surface);
-            padding: 1rem;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .accordion-header:hover { background: var(--bg); }
-        .accordion-content {
-            padding: 1rem;
-            display: none;
-            border-top: 1px solid var(--border);
-            background: #fafafa;
-        }
-        .accordion.open .accordion-content { display: block; }
-        .accordion-header::after { content: '▼'; font-size: 0.7rem; transition: 0.3s; }
-        .accordion.open .accordion-header::after { transform: rotate(180deg); }
-
-        .mistake-box {
-            background: #fef2f2;
-            border-left: 4px solid #ef4444;
-            padding: 1rem;
-            margin-top: 1rem;
-        }
-
-        footer {
-            margin-top: 5rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 768px) {
-            nav { width: 0; display: none; }
-            main { margin-left: 0; padding: 1.5rem; }
+        .phase-card:hover { transform: translateY(-5px); }
+        .phase-num { font-weight: 800; color: var(--guru-gold); font-size: 0.9rem; text-transform: uppercase; }
+        
+        .btn { 
+            display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; 
+            background: var(--pro-blue); color: white; text-decoration: none; border-radius: 5px; 
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">
-        <span>📘</span> TutorGuide v1.0
+    <div class="nav-header">
+        <h2>GuruPath AI</h2>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Zero to Market-Ready</p>
     </div>
-    
-    <div class="nav-group">
-        <div class="nav-group-title">Module 1</div>
-        <a class="nav-link active" onclick="showModule('basics')">Computer Basics</a>
-    </div>
-
-    <div class="nav-group">
-        <div class="nav-group-title">Module 2</div>
-        <a class="nav-link" onclick="showModule('msoffice')">Microsoft Office</a>
-    </div>
-
-    <div class="nav-group">
-        <div class="nav-group-title">Module 3</div>
-        <a class="nav-link" onclick="showModule('data')">Data Analysis</a>
-    </div>
-
-    <div class="nav-group">
-        <div class="nav-group-title">Module 4</div>
-        <a class="nav-link" onclick="showModule('python')">Python Coding</a>
-    </div>
+    <a href="index.html" class="module-link active">🏠 Overview Roadmap</a>
+    <a href="basics.html" class="module-link">💻 01. Computer Architecture</a>
+    <a href="excel_guru.html" class="module-link">📊 02. Excel & Data Mastery</a>
+    <a href="analysis.html" class="module-link">📈 03. Statistical Analysis</a>
+    <a href="python.html" class="module-link">🐍 04. Python Engineer</a>
 </nav>
 
 <main>
-    <section id="basics" class="module-section active">
-        <span class="tag">Start Here</span>
-        <h1>Computer Basics</h1>
-        <p class="intro-lead">Understanding the machine from the ground up. No assumptions, just clear steps.</p>
+    <div class="hero">
+        <span class="phase-num">The Curriculum</span>
+        <h1>From Newbie to Guru</h1>
+        <p style="font-size: 1.2rem; color: #64748b; max-width: 700px;">
+            This isn't just a tutorial. This is an engineering-grade roadmap designed to build deep mental models of how technology works.
+        </p>
+    </div>
 
-        <div class="card">
-            <h3>What is a Computer?</h3>
-            <div class="analogy">
-                Imagine a <strong>Kitchen</strong>. You have a Chef (the brain), a countertop (the workspace), and a pantry (the storage). The computer works exactly the same way.
-            </div>
-            <p>A computer is an electronic device that takes raw facts (Input), processes them into something useful, and shows you the result (Output).</p>
+    <div class="roadmap">
+        <div class="phase-card">
+            <span class="phase-num">Level 01</span>
+            <h3>Deep Architecture</h3>
+            <p>Beyond clicking icons. Understand Kernel vs Shell, Registry, Binary, and Network Protocols.</p>
+            <a href="basics.html" class="btn">Explore Depth</a>
         </div>
-
-        <h3 style="margin: 2rem 0 1rem;">The Hardware (The Physical Stuff)</h3>
-        <div class="hardware-box">
-            <div class="hw-component">
-                <strong>CPU</strong>
-                <p style="font-size: 0.7rem;">The Chef. Does all the thinking.</p>
-            </div>
-            <div class="hw-component">
-                <strong>RAM</strong>
-                <p style="font-size: 0.7rem;">The Countertop. Temporary workspace.</p>
-            </div>
-            <div class="hw-component">
-                <strong>SSD/HDD</strong>
-                <p style="font-size: 0.7rem;">The Pantry. Where files live forever.</p>
-            </div>
+        <div class="phase-card" style="border-left-color: var(--depth-green);">
+            <span class="phase-num">Level 02</span>
+            <h3>The Excel Engineer</h3>
+            <p>Master Power Query, Pivot DAX, and Nested Arrays. Learn to automate workbooks for corporate scale.</p>
+            <a href="excel_guru.html" class="btn">Start Crunching</a>
         </div>
-
-        <div class="concept-grid">
-            <div class="card">
-                <h4>🖱️ Mouse Usage</h4>
-                <div class="accordion">
-                    <div class="accordion-header">Left Click</div>
-                    <div class="accordion-content">Used to select or "pick up" something. Think of it like pointing your finger at an object.</div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-header">Double Click</div>
-                    <div class="accordion-content">Used to open files or programs. It must be two fast clicks in a row!</div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-header">Right Click</div>
-                    <div class="accordion-content">The "Secret Menu." It opens a list of options for whatever you clicked on.</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h4>⌨️ Essential Keys</h4>
-                <ul style="list-style: none; font-size: 0.9rem;">
-                    <li><kbd>Enter</kbd> : "Yes" or "Go."</li>
-                    <li><kbd>Backspace</kbd> : Erase to the left.</li>
-                    <li><kbd>Shift</kbd> : Hold for Capital letters.</li>
-                    <li><kbd>Ctrl</kbd> : The "Command" key for shortcuts.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <h3>Files & Folders</h3>
-            <p>Think of your computer as a giant digital filing cabinet.</p>
-            <div class="step-list" style="margin-top:1.5rem">
-                <div class="step-item">
-                    <strong>The Path:</strong> Files live inside Folders. Folders can live inside other Folders.
-                </div>
-                <div class="step-item">
-                    <strong>Extensions:</strong> Every file has a "Last Name" that tells the computer what it is. 
-                    <br><code>report.docx</code> (Word Document) 
-                    <br><code>photo.jpg</code> (Image)
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="msoffice" class="module-section">
-        <span class="tag">Workplace Essentials</span>
-        <h1>Microsoft Office Suite</h1>
-        <p class="intro-lead">The digital toolkit for every professional office task.</p>
-
-        <div class="accordion">
-            <div class="accordion-header">📗 Microsoft Excel: The Number Cruncher</div>
-            <div class="accordion-content">
-                <p>Excel is a grid of <strong>Cells</strong>. Each cell has an address, like B2 (Column B, Row 2).</p>
-                <div class="analogy">Excel is just a very powerful calculator that remembers every number you typed.</div>
-                
-                <h4 style="margin: 1rem 0;">Creating a Formula</h4>
-                <p>Every formula MUST start with an Equals sign <kbd>=</kbd>. Without it, Excel thinks you are just typing text.</p>
-                <pre>
-<span class="code-comment">// Adding two cells together</span>
-=A1 + B1
-
-<span class="code-comment">// Using a Function (a built-in tool)</span>
-=SUM(A1:A10)</pre>
-            </div>
-        </div>
-
-        <div class="accordion">
-            <div class="accordion-header">📘 Microsoft Word: The Writer</div>
-            <div class="accordion-content">
-                <p>Focus on the <strong>Ribbon</strong> (the menu at the top). It is grouped by what you want to do:</p>
-                <ul>
-                    <li><strong>Home:</strong> Changing how text looks (Bold, Size, Color).</li>
-                    <li><strong>Insert:</strong> Adding "Stuff" (Pictures, Tables, Page Numbers).</li>
-                    <li><strong>Layout:</strong> Changing the paper size or margins.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="mistake-box">
-            <strong>Common Beginner Mistake:</strong> Not "Saving As" immediately. Always name your file and save it to a folder you recognize before you start working!
-        </div>
-    </section>
-
-    <section id="data" class="module-section">
-        <span class="tag">Analytical Thinking</span>
-        <h1>Data Analysis Fundamentals</h1>
-        <p class="intro-lead">Turning raw numbers into stories and decisions.</p>
-
-        <div class="card">
-            <h3>The 4-Step Process</h3>
-            <div class="step-list">
-                <div class="step-item"><strong>Ask:</strong> What problem are we trying to solve?</div>
-                <div class="step-item"><strong>Clean:</strong> Remove duplicates and fix spelling errors in your data.</div>
-                <div class="step-item"><strong>Analyze:</strong> Find the Average, the Highest, and the Lowest.</div>
-                <div class="step-item"><strong>Share:</strong> Create a chart so others can see the trend.</div>
-            </div>
-        </div>
-
-        <div class="card" style="border-top: 5px solid var(--success);">
-            <h3>Understanding Data Types</h3>
-            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
-                <tr style="border-bottom: 2px solid var(--border);">
-                    <th style="text-align: left; padding: 10px;">Type</th>
-                    <th style="text-align: left; padding: 10px;">Example</th>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;"><strong>Quantitative</strong> (Numbers)</td>
-                    <td style="padding: 10px;">Price, Height, Age</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;"><strong>Qualitative</strong> (Categories)</td>
-                    <td style="padding: 10px;">Color, Name, City</td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section id="python" class="module-section">
-        <span class="tag">Automation</span>
-        <h1>Python Programming</h1>
-        <p class="intro-lead">Talking to the computer in a language it understands.</p>
-
-        <div class="card">
-            <h3>What is a Variable?</h3>
-            <div class="analogy">A Variable is like a labeled <strong>Box</strong>. You put a value inside the box so you can use it later.</div>
-            <pre>
-<span class="code-comment"># We label a box 'name' and put "Alice" inside</span>
-name = <span class="code-string">"Alice"</span>
-age = <span class="code-keyword">25</span>
-
-<span class="code-func">print</span>(name)</pre>
-        </div>
-
-        <div class="card">
-            <h3>Logical Thinking (If/Else)</h3>
-            <p>Programming is just making decisions based on rules.</p>
-            <pre>
-<span class="code-keyword">if</span> age > <span class="code-keyword">18</span>:
-    <span class="code-func">print</span>(<span class="code-string">"You are an adult"</span>)
-<span class="code-keyword">else</span>:
-    <span class="code-func">print</span>(<span class="code-string">"You are a minor"</span>)</pre>
-        </div>
-
-        <div class="mistake-box">
-            <strong>Gentle Reminder:</strong> Computers are very literal. If you miss a single colon (:) or a quote mark ("), the code won't run. This is normal! Every programmer spends half their time fixing these small typos.
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2024 Educational Curriculum Designer. Designed for live tutor-student interaction.
-    </footer>
+    </div>
 </main>
-
-<script>
-    // Module Navigation Logic
-    function showModule(moduleId) {
-        // Hide all sections
-        document.querySelectorAll('.module-section').forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // Show selected section
-        document.getElementById(moduleId).classList.add('active');
-
-        // Update Nav Links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            if(link.getAttribute('onclick').includes(moduleId)) {
-                link.classList.add('active');
-            }
-        });
-
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Accordion Logic
-    document.querySelectorAll('.accordion-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const parent = header.parentElement;
-            parent.classList.toggle('open');
-        });
-    });
-
-    // Teaching Intent: 
-    // This script ensures the tutor can jump between topics instantly 
-    // based on the student's questions without refreshing the page.
-</script>
 
 </body>
 </html>
