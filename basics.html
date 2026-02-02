@@ -1,3 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Module 01: Computer Architecture & Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        :root { --pro-blue: #0f172a; --accent: #3b82f6; --bg: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; background: var(--bg); color: var(--pro-blue); }
+        .sidebar { width: 300px; background: var(--pro-blue); color: white; height: 100vh; position: fixed; padding: 2rem; box-sizing: border-box; }
+        .content { margin-left: 300px; padding: 4rem; max-width: 1000px; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 18px rgba(15,23,42,0.06); margin-bottom: 1.5rem; }
+        .cmd-line { background: #0b1220; color: #38bdf8; padding: 1rem; border-radius: 6px; font-family: 'Fira Code', monospace; }
+        .badge { background: #3b82f6; color: white; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; }
+        h2 { color: var(--pro-blue); border-left: 4px solid var(--accent); padding-left: 1rem; }
+        footer { margin-top: 2rem; font-size: 0.9rem; color: #475569; }
+        a.dev-link { color: #2563eb; text-decoration: none; }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <small style="letter-spacing:2px">MODULE 01</small>
+    <h2>System Architecture</h2>
+    <p style="opacity:0.8;">Topics: Hardware abstraction · OS Kernels · CLI · Networking</p>
+    <hr style="opacity:0.15; margin: 1.5rem 0;">
+    <nav style="font-size:0.95rem;">
+        <p>• Kernel vs Userland</p>
+        <p>• Processes & Scheduling</p>
+        <p>• Filesystems & Storage</p>
+        <p>• Networking basics</p>
+    </nav>
+    <div style="position:absolute; bottom:2rem; left:2rem; right:2rem; font-size:0.85rem; opacity:0.9;">
+        <p style="margin:0">Developer: <strong>WabukoWabuko</strong></p>
+        <p style="margin:0">Email: <a class="dev-link" href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a></p>
+        <p style="margin:0">Portfolio: <a class="dev-link" href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a></p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="card">
+        <span class="badge">DEEP DIVE</span>
+        <h2>The Kernel, Userland, and the Shell</h2>
+        <p>The kernel is the trusted core that manages CPU, memory, devices, and system calls. Userland (user-space) runs applications in isolated processes. The shell is one userland program that translates human commands into system calls.</p>
+        <ul>
+            <li><strong>Process:</strong> A running program with its own memory space.</li>
+            <li><strong>Thread:</strong> A schedulable unit inside a process sharing memory.</li>
+            <li><strong>Context Switch:</strong> When the CPU switches which process/thread it runs.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>CLI Fundamentals — Practical Examples</h2>
+        <p>The command line enables automation, reproducibility, and speed. Below are common commands with examples (Windows & POSIX notes):</p>
+        <div class="cmd-line">
+            &gt; cd Desktop\Project_X  &nbsp;&nbsp; (Windows path example)<br>
+            &gt; mkdir assets scripts docs<br>
+            &gt; dir /s  &nbsp;&nbsp; (Windows) — or &nbsp;&nbsp; &gt; ls -la (POSIX)
+        </div>
+        <p><strong>Teaching tip:</strong> Show the student how to combine commands into scripts to repeat tasks reliably.</p>
+    </div>
+
+    <div class="card">
+        <h2>Hardware Abstraction Layer (HAL)</h2>
+        <p>HALs provide drivers and device interfaces that allow OS components to access hardware without per-device logic spread across the system. This increases portability and safety.</p>
+        <p><strong>Example:</strong> Print spooling — applications submit print jobs, the OS/driver translates and queues them, and the hardware prints independently.</p>
+    </div>
+
+    <div class="card" style="border-top:4px solid #ef4444;">
+        <h2>Networking Essentials (How the Web Works)</h2>
+        <p>At a high level: DNS → TCP/IP → TLS → HTTP. DNS resolves names to IPs; TCP provides reliable transport; TLS secures the connection; HTTP carries the application data (HTML/CSS/JSON).</p>
+        <p><strong>Step-by-step request:</strong></p>
+        <ol>
+            <li>Browser resolves domain via DNS.</li>
+            <li>Client opens TCP connection to server IP:port (usually 443 for HTTPS).</li>
+            <li>TLS handshake establishes encrypted channel.</li>
+            <li>Client sends HTTP request and receives response (HTML).</li>
+        </ol>
+        <p><strong>Practical:</strong> Use browser dev tools Network tab to inspect request/response headers and timing.</p>
+    </div>
+
+    <div class="card">
+        <h2>Filesystems & Persistent Storage</h2>
+        <p>Compare storage types: RAM (volatile, fast), SSD/NVMe (non-volatile, fast), HDD (non-volatile, cheaper). Understand journaled filesystems (NTFS, ext4) vs. log-structured (btrfs).</p>
+        <p><strong>Exercise:</strong> Ask the student to explain why swap exists and when it's helpful versus when it hurts performance.</p>
+    </div>
+
+    <footer>
+        <strong>Further reading:</strong> <a href="https://en.wikipedia.org/wiki/Operating_system" target="_blank">Operating system (Wikipedia)</a> · <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_requests" target="_blank">HTTP request lifecycle (MDN)</a>
+    </footer>
+</div>
+</body>
+</html>
 <!-- Developer Information -->
 <div class="developer-info">
     <h2>Developer Information</h2>

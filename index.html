@@ -63,25 +63,57 @@
     <div class="hero">
         <span class="phase-num">The Curriculum</span>
         <h1>From Newbie to Guru</h1>
-        <p style="font-size: 1.2rem; color: #64748b; max-width: 700px;">
-            This isn't just a tutorial. This is an engineering-grade roadmap designed to build deep mental models of how technology works.
+        <p style="font-size: 1.1rem; color: #64748b; max-width: 800px;">
+            This is an engineering-grade roadmap: each module teaches mental models, practical skills, and projects that map directly to workplace tasks.
         </p>
+        <p style="margin-top:1rem; font-size:0.95rem; color:#475569; max-width:800px;">Suggested pace: 6–8 weeks per module for a deep, project-based learning path. Each module contains conceptual sections, hands-on labs, and a capstone project.</p>
     </div>
 
     <div class="roadmap">
         <div class="phase-card">
             <span class="phase-num">Level 01</span>
             <h3>Deep Architecture</h3>
-            <p>Beyond clicking icons. Understand Kernel vs Shell, Registry, Binary, and Network Protocols.</p>
+            <p>Understand how operating systems, storage, and networks work so you can reason about performance and reliability.</p>
+            <ul>
+                <li>Learning outcomes: process scheduling, filesystems, CLI automation.</li>
+                <li>Capstone: Build a guided system audit and document findings.</li>
+            </ul>
             <a href="basics.html" class="btn">Explore Depth</a>
         </div>
         <div class="phase-card" style="border-left-color: var(--depth-green);">
             <span class="phase-num">Level 02</span>
             <h3>The Excel Engineer</h3>
-            <p>Master Power Query, Pivot DAX, and Nested Arrays. Learn to automate workbooks for corporate scale.</p>
+            <p>From clean-up pipelines (Power Query) to dynamic dashboards and automation with Office scripts.</p>
+            <ul>
+                <li>Learning outcomes: XLOOKUP, Power Query ETL, dynamic arrays, dashboarding.</li>
+                <li>Capstone: Deliver a production-quality financial dashboard with refreshable data.</li>
+            </ul>
             <a href="excel_guru.html" class="btn">Start Crunching</a>
         </div>
+        <div class="phase-card">
+            <span class="phase-num">Level 03</span>
+            <h3>Statistical Analysis</h3>
+            <p>Build intuition for distributions, hypothesis testing, and reproducible analysis.</p>
+            <a href="analysis.html" class="btn">Study Patterns</a>
+        </div>
+        <div class="phase-card" style="border-left-color: #f97316;">
+            <span class="phase-num">Level 04</span>
+            <h3>Python Engineer</h3>
+            <p>Automation, data engineering, and quick tooling using Python and the PyData stack.</p>
+            <a href="python.html" class="btn">Automate Workflows</a>
+        </div>
     </div>
+
+    <section style="margin-top:2rem;">
+        <h3 style="margin-bottom:0.5rem;">Quick Start</h3>
+        <p style="color:#475569; max-width:800px;">To view the site locally open the HTML files directly in your browser. For iterative development run a quick static server (Python 3):</p>
+        <pre style="background:#f8fafc;border-radius:8px;padding:10px;">python -m http.server 8000</pre>
+    </section>
+
+    <footer style="margin-top:2rem; color:#475569;">
+        <strong>Developer:</strong> WabukoWabuko — <a href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a> · <a href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a>
+    </footer>
+
 </main>
 
 </body>

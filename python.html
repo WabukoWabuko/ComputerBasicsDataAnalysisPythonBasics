@@ -45,6 +45,39 @@ user_data = {
         <p><strong>The Guru Solution:</strong> Write a Python script using the <code>pandas</code> library to open all 500 files, calculate the total sales, and save it into a "Master Report" in 3 seconds.</p>
         <p><em>Focus on teaching the "Why" before the syntax.</em></p>
     </div>
+    
+    <div class="card" style="margin-top:1.5rem;">
+        <h2>Environment & Tooling</h2>
+        <p>Set up an isolated environment using <code>venv</code> or <code>conda</code>. Install common packages:</p>
+        <pre class="code-block">python -m venv .venv
+source .venv/bin/activate  # POSIX
+.venv\Scripts\activate     # Windows
+pip install pandas numpy jupyter</pre>
+        <p>Use <code>jupyter</code> for interactive exploration and <code>pytest</code> for tests.</p>
+    </div>
+
+    <div class="card">
+        <h2>Example: Merge many CSV files with pandas</h2>
+        <div class="code-block">
+from pathlib import Path
+import pandas as pd
+
+files = list(Path('data').glob('*.csv'))
+df = pd.concat((pd.read_csv(f) for f in files), ignore_index=True)
+summary = df.groupby('region')['sales'].sum().reset_index()
+summary.to_csv('master_report.csv', index=False)
+        </div>
+        <p><strong>Explanation:</strong> Use streaming reads for very large files and validate column types before concatenation.</p>
+    </div>
+
+    <div class="card">
+        <h2>Testing & Deployment</h2>
+        <p>Write small unit tests for critical data transformations. Example test ideas: schema validation, aggregation correctness, and missing value handling.</p>
+    </div>
+
+    <footer style="margin-top:1.5rem; color:#475569;">
+        <strong>Developer:</strong> WabukoWabuko — <a href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a> · <a href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a>
+    </footer>
 </div>
 </body>
 </html>

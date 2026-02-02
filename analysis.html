@@ -113,6 +113,37 @@
             <li>Predict next month's sales based on a 3-month <strong>Moving Average</strong>.</li>
         </ol>
     </div>
+    
+    <div class="guru-box">
+        <h2>4. Probability Distributions</h2>
+        <p>Common distributions: <strong>Normal</strong>, <strong>Binomial</strong>, <strong>Poisson</strong>. Choosing the right model matters for inference and prediction.</p>
+        <div class="math-block">
+            Normal: $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+        </div>
+        <p><strong>Example:</strong> Heights are approximately Normal; counting daily defects fits a Poisson model.</p>
+    </div>
+
+    <div class="guru-box">
+        <h2>5. Hypothesis Testing & Confidence Intervals</h2>
+        <p>Formulate a null hypothesis, choose an alpha (commonly 0.05), compute a test statistic and p-value, then decide whether to reject the null.</p>
+        <p><strong>Example:</strong> Test whether a new feature increases conversion rate. Use a two-proportion z-test and report a 95% CI for the lift.</p>
+        <div class="warning-box">
+            <strong>Teaching tip:</strong> Emphasize effect size and sample power — small p-values are not automatically practically significant.
+        </div>
+    </div>
+
+    <div class="guru-box">
+        <h2>6. Practical Exercises</h2>
+        <ol>
+            <li>Given a CSV of monthly sales, compute moving averages, seasonal decomposition, and forecast with a simple linear model.</li>
+            <li>Simulate 10,000 samples from a Normal distribution and show the sampling distribution of the mean.</li>
+            <li>Perform an A/B test analysis: compute conversion lift, CI, and required sample size for 80% power.</li>
+        </ol>
+    </div>
+    
+    <footer style="margin-top:1.5rem; color:#475569;">
+        <strong>Developer:</strong> WabukoWabuko — <a href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a> · <a href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a>
+    </footer>
 </div>
 
 <script>
