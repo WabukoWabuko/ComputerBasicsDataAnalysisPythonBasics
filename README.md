@@ -32,4 +32,5 @@ Contributing:
 
 Developer:
 
-WabukoWabuko — basilwabbs@gmail.com — wabulo-portfolio.vercel.app
+WabukoWabuko — basilwabbs@gmail.com — wabuko-portfolio.vercel.app
+

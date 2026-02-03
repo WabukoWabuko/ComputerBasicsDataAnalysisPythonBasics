@@ -25,7 +25,7 @@
         <a href="resources.html">Tools & Resources</a>
       </nav>
       <div class="meta">
-        Focus: OS, storage, networking, CLI<br>
+        Focus: OS, hardware, storage, networking, CLI<br>
         Progression: Baby ? Builder ? Guru
       </div>
     </aside>
@@ -33,16 +33,17 @@
     <main class="main">
       <section class="hero reveal">
         <div class="badge">Module 01</div>
-        <h1>Understand the system before you optimize it.</h1>
+        <h1>The complete foundation: how computers really work.</h1>
         <p>
-          This module builds deep, layered understanding of how computers work. We move from
-          simple analogies to professional diagnostics, performance, and reliability skills.
+          This module is the full map of computer architecture and system fundamentals.
+          Every concept starts with a baby-friendly analogy, grows into builder practice,
+          and ends with guru-level reasoning and real-world application.
         </p>
         <div class="pill-group">
-          <div class="pill">Hardware + OS</div>
-          <div class="pill">Filesystems</div>
-          <div class="pill">Networking</div>
-          <div class="pill">CLI automation</div>
+          <div class="pill">Hardware ? OS ? Network</div>
+          <div class="pill">Smallest to largest concepts</div>
+          <div class="pill">Real-world application</div>
+          <div class="pill">Misconceptions fixed</div>
         </div>
       </section>
 
@@ -55,7 +56,7 @@
           </div>
           <div class="level">
             <div class="label">Builder explanation</div>
-            <p>The CPU executes instructions, RAM holds active data, storage keeps data long-term. The OS manages everything.</p>
+            <p>The CPU executes instructions, RAM holds active data, storage keeps data long-term. The OS coordinates all parts.</p>
           </div>
           <div class="level">
             <div class="label">Guru explanation</div>
@@ -65,35 +66,45 @@
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>2</span>Concept map (smallest to largest)</div>
+        <div class="section-title"><span>2</span>Concept map (smallest ? largest)</div>
         <table class="table">
           <thead>
             <tr>
               <th>Layer</th>
               <th>Core ideas</th>
-              <th>What students should be able to explain</th>
+              <th>What students should explain</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>Data & bits</td>
+              <td>Binary, bytes, encoding</td>
+              <td>How text and numbers are represented</td>
+            </tr>
+            <tr>
               <td>Hardware</td>
-              <td>CPU, RAM, storage, peripherals</td>
-              <td>Why RAM is fast but temporary, and storage is slower but durable</td>
+              <td>CPU, RAM, storage, buses</td>
+              <td>Why speed differs across components</td>
+            </tr>
+            <tr>
+              <td>Firmware</td>
+              <td>BIOS/UEFI, boot sequence</td>
+              <td>How a machine starts before the OS loads</td>
             </tr>
             <tr>
               <td>Operating system</td>
-              <td>Processes, memory, drivers, scheduling</td>
-              <td>How the OS keeps apps isolated and stable</td>
+              <td>Processes, memory, drivers</td>
+              <td>How the OS isolates and schedules apps</td>
             </tr>
             <tr>
-              <td>Filesystems</td>
-              <td>Folders, permissions, journaling</td>
-              <td>Why files live in paths and how access is controlled</td>
+              <td>Filesystem</td>
+              <td>Paths, permissions, journaling</td>
+              <td>Where files live and who can access them</td>
             </tr>
             <tr>
               <td>Network</td>
-              <td>DNS, TCP, TLS, HTTP</td>
-              <td>How data moves from server to browser</td>
+              <td>DNS, IP, TCP, TLS, HTTP</td>
+              <td>How a web request travels end-to-end</td>
             </tr>
             <tr>
               <td>Applications</td>
@@ -105,61 +116,164 @@
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>3</span>Core concepts with examples</div>
+        <div class="section-title"><span>3</span>Data representation (the smallest layer)</div>
         <div class="grid two">
           <div class="card">
-            <h3>CPU, cores, and threads</h3>
-            <p><strong>Baby:</strong> One chef can cook one thing at a time. More chefs = more tasks at once.</p>
-            <p><strong>Builder:</strong> Cores run tasks in parallel. Threads are the tasks themselves.</p>
-            <p><strong>Guru:</strong> Context switching costs time. CPU-bound vs IO-bound tasks require different tuning.</p>
+            <h3>Bits and bytes</h3>
+            <p><strong>Baby:</strong> A bit is a light switch: on or off.</p>
+            <p><strong>Builder:</strong> 8 bits = 1 byte, used to store numbers and letters.</p>
+            <p><strong>Guru:</strong> Data types, integer overflow, and precision affect correctness.</p>
           </div>
           <div class="card">
-            <h3>Memory and storage</h3>
-            <p><strong>Baby:</strong> The counter is small but fast; the pantry is big but slower.</p>
-            <p><strong>Builder:</strong> RAM is volatile; SSD is persistent.</p>
-            <p><strong>Guru:</strong> Memory pressure triggers paging. NVMe reduces IO latency.</p>
+            <h3>Encoding</h3>
+            <p><strong>Baby:</strong> Letters are stored as secret numbers.</p>
+            <p><strong>Builder:</strong> ASCII and UTF-8 map characters to bytes.</p>
+            <p><strong>Guru:</strong> Encoding mismatches cause corrupted text.</p>
           </div>
           <div class="card">
-            <h3>Processes and scheduling</h3>
-            <p><strong>Baby:</strong> The boss gives each worker a turn.</p>
-            <p><strong>Builder:</strong> The OS gives time slices to each process.</p>
-            <p><strong>Guru:</strong> Priority, nice values, and CPU affinity affect performance.</p>
+            <h3>Files vs memory</h3>
+            <p><strong>Baby:</strong> A file is a saved drawing; memory is the drawing on the table.</p>
+            <p><strong>Builder:</strong> Memory is temporary; files persist after power loss.</p>
+            <p><strong>Guru:</strong> Memory-mapped files improve IO performance.</p>
           </div>
           <div class="card">
-            <h3>Filesystems and permissions</h3>
-            <p><strong>Baby:</strong> Some files are yours, some are locked.</p>
-            <p><strong>Builder:</strong> Permissions define read/write/execute for user, group, others.</p>
-            <p><strong>Guru:</strong> Understand ACLs, journaling, and backup strategies.</p>
+            <h3>Compression</h3>
+            <p><strong>Baby:</strong> Fold clothes to fit more in a suitcase.</p>
+            <p><strong>Builder:</strong> ZIP reduces file size but needs CPU to unpack.</p>
+            <p><strong>Guru:</strong> Choose compression based on CPU vs IO trade-offs.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>4</span>Networking basics</div>
+        <div class="section-title"><span>4</span>Hardware essentials</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>CPU, cores, threads</h3>
+            <p><strong>Baby:</strong> More chefs can cook more meals at once.</p>
+            <p><strong>Builder:</strong> Cores run tasks in parallel; threads are tasks.</p>
+            <p><strong>Guru:</strong> Context switching and CPU affinity affect performance.</p>
+          </div>
+          <div class="card">
+            <h3>Memory hierarchy</h3>
+            <p><strong>Baby:</strong> Counter space is small but fast.</p>
+            <p><strong>Builder:</strong> CPU cache is fastest, RAM is next, storage is slowest.</p>
+            <p><strong>Guru:</strong> Cache locality matters for performance.</p>
+          </div>
+          <div class="card">
+            <h3>Storage types</h3>
+            <p><strong>Baby:</strong> Pantry is big but slow.</p>
+            <p><strong>Builder:</strong> SSDs are faster than HDDs.</p>
+            <p><strong>Guru:</strong> NVMe improves IOPS and latency.</p>
+          </div>
+          <div class="card">
+            <h3>Motherboard & buses</h3>
+            <p><strong>Baby:</strong> Roads connect the city.</p>
+            <p><strong>Builder:</strong> Buses move data between components.</p>
+            <p><strong>Guru:</strong> Bus bandwidth can be a bottleneck.</p>
+          </div>
+        </div>
+        <div class="note" style="margin-top: 16px;">
+          <strong>Real-world connection:</strong> Slow laptop? It might be the storage, not the CPU.
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>5</span>Firmware & boot</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>BIOS/UEFI</h3>
+            <p>Firmware that initializes hardware and starts the bootloader.</p>
+          </div>
+          <div class="card">
+            <h3>Boot process</h3>
+            <p>Power ? firmware checks ? bootloader ? OS kernel ? login.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>6</span>Operating system fundamentals</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Processes and threads</h3>
+            <p><strong>Baby:</strong> Workers doing tasks.</p>
+            <p><strong>Builder:</strong> Processes are isolated programs; threads are workers inside them.</p>
+            <p><strong>Guru:</strong> Thread contention and locking reduce throughput.</p>
+          </div>
+          <div class="card">
+            <h3>Scheduling</h3>
+            <p><strong>Baby:</strong> The boss decides who works next.</p>
+            <p><strong>Builder:</strong> Time slicing gives each process a turn.</p>
+            <p><strong>Guru:</strong> Priority and fairness impact responsiveness.</p>
+          </div>
+          <div class="card">
+            <h3>Memory management</h3>
+            <p><strong>Baby:</strong> The desk gets crowded.</p>
+            <p><strong>Builder:</strong> The OS uses paging and swap when RAM is full.</p>
+            <p><strong>Guru:</strong> Memory pressure leads to thrashing.</p>
+          </div>
+          <div class="card">
+            <h3>Drivers</h3>
+            <p><strong>Baby:</strong> Translators between people and machines.</p>
+            <p><strong>Builder:</strong> Drivers let the OS control hardware safely.</p>
+            <p><strong>Guru:</strong> Bad drivers can crash systems.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>7</span>Filesystem and storage logic</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Paths and folders</h3>
+            <p><strong>Baby:</strong> Address for where things live.</p>
+            <p><strong>Builder:</strong> Absolute vs relative paths.</p>
+            <p><strong>Guru:</strong> Normalize paths to avoid errors in scripts.</p>
+          </div>
+          <div class="card">
+            <h3>Permissions</h3>
+            <p><strong>Baby:</strong> Some doors are locked.</p>
+            <p><strong>Builder:</strong> Read/write/execute for user, group, others.</p>
+            <p><strong>Guru:</strong> Least privilege prevents damage.</p>
+          </div>
+          <div class="card">
+            <h3>File systems</h3>
+            <p>NTFS, exFAT, ext4 — each with different trade-offs.</p>
+          </div>
+          <div class="card">
+            <h3>Backup strategy</h3>
+            <p>3-2-1 backups: three copies, two media types, one off-site.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>8</span>Networking essentials</div>
         <div class="grid two">
           <div class="card">
             <h3>Request lifecycle</h3>
             <p><strong>Baby:</strong> You ask a librarian for a book.</p>
             <p><strong>Builder:</strong> DNS resolves domain, TCP connects, TLS encrypts, HTTP delivers.</p>
-            <p><strong>Guru:</strong> Diagnose by inspecting headers, round-trip time, and status codes.</p>
+            <p><strong>Guru:</strong> Diagnose by inspecting headers, round-trip time, status codes.</p>
           </div>
           <div class="card">
-            <h3>Common network problems</h3>
+            <h3>Common issues</h3>
             <ul class="list">
               <li>DNS misconfiguration</li>
               <li>Firewall or proxy blocking</li>
               <li>High latency or packet loss</li>
-              <li>Server overload (5xx errors)</li>
+              <li>Server overload (5xx)</li>
             </ul>
           </div>
         </div>
         <div class="note" style="margin-top: 16px;">
-          <strong>Real-world connection:</strong> Explain how slow Wi-Fi, bad DNS, or a busy server can make an app “feel broken.”
+          <strong>Real-world connection:</strong> Bad Wi-Fi, bad DNS, or server overload all feel like “the internet is down.”
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>5</span>CLI fundamentals and automation</div>
+        <div class="section-title"><span>9</span>Command line and automation</div>
         <div class="code-block">cd Desktop\Project_X
 mkdir assets scripts docs
 Get-ChildItem -Recurse
@@ -168,66 +282,85 @@ Get-Content .\docs\notes.txt
         <div class="grid two" style="margin-top: 16px;">
           <div class="card">
             <h3>Why it matters</h3>
-            <p>CLI work is faster, repeatable, and easy to automate with scripts.</p>
+            <p>CLI work is faster, repeatable, and automatable.</p>
           </div>
           <div class="card">
             <h3>Practice task</h3>
-            <p>Create a project folder and generate a simple report file with basic commands.</p>
+            <p>Create a project folder and generate a simple report file.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>6</span>Less common but useful concepts</div>
+        <div class="section-title"><span>10</span>Performance and reliability</div>
         <div class="grid two">
           <div class="card">
-            <h3>BIOS/UEFI</h3>
-            <p>Startup firmware that initializes hardware before the OS loads.</p>
+            <h3>CPU-bound vs IO-bound</h3>
+            <p>CPU-bound tasks need faster computation; IO-bound tasks need faster storage or network.</p>
           </div>
           <div class="card">
-            <h3>Virtualization</h3>
-            <p>Run multiple virtual computers on one machine for testing or isolation.</p>
+            <h3>Monitoring basics</h3>
+            <p>Track CPU usage, memory pressure, disk queue length, and network latency.</p>
           </div>
           <div class="card">
-            <h3>File system types</h3>
-            <p>NTFS, exFAT, ext4 — each has different trade-offs for speed and reliability.</p>
+            <h3>Reliability</h3>
+            <p>Redundancy, backups, and patching prevent downtime.</p>
           </div>
           <div class="card">
-            <h3>Device drivers</h3>
-            <p>Translation layer between hardware and the OS.</p>
+            <h3>Troubleshooting workflow</h3>
+            <p>Reproduce ? isolate ? measure ? fix ? verify.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>7</span>Real-world applications</div>
-        <div class="grid three">
+        <div class="section-title"><span>11</span>Security foundations</div>
+        <div class="grid two">
           <div class="card">
-            <h3>System troubleshooting</h3>
-            <p>Identify CPU, RAM, or disk bottlenecks and recommend fixes.</p>
+            <h3>Least privilege</h3>
+            <p>Give only the permissions needed for the task.</p>
           </div>
           <div class="card">
-            <h3>IT support workflows</h3>
-            <p>Document issues, reproduce errors, and communicate resolution steps.</p>
+            <h3>Updates and patches</h3>
+            <p>Keep OS and software updated to close vulnerabilities.</p>
           </div>
           <div class="card">
-            <h3>Performance tuning</h3>
-            <p>Measure baseline performance, then optimize.</p>
+            <h3>Passwords & MFA</h3>
+            <p>Use strong passwords and multi-factor authentication.</p>
+          </div>
+          <div class="card">
+            <h3>Phishing awareness</h3>
+            <p>Teach students to verify links and email sources.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>8</span>Misconceptions to correct</div>
+        <div class="section-title"><span>12</span>Virtualization and containers</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Virtual machines</h3>
+            <p>Run multiple operating systems on one physical machine.</p>
+          </div>
+          <div class="card">
+            <h3>Containers</h3>
+            <p>Lightweight isolation for applications and environments.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>13</span>Misconceptions to correct</div>
         <ul class="list">
           <li>“More RAM always means faster.” Sometimes storage or CPU is the bottleneck.</li>
-          <li>“The internet is a single place.” It is a network of networks and services.</li>
-          <li>“Files are magic.” Files live in folders, and permissions control access.</li>
+          <li>“The internet is one place.” It is a network of networks and services.</li>
+          <li>“Files are magic.” Files are stored at paths with permissions.</li>
+          <li>“CPU speed alone decides performance.” IO and memory matter too.</li>
         </ul>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>9</span>Guided labs</div>
+        <div class="section-title"><span>14</span>Guided labs</div>
         <div class="grid three">
           <div class="card">
             <h3>Lab 1: System audit</h3>
@@ -245,7 +378,7 @@ Get-Content .\docs\notes.txt
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>10</span>Capstone</div>
+        <div class="section-title"><span>15</span>Capstone</div>
         <p>Build a guided system audit report that includes:</p>
         <ul class="list">
           <li>Hardware overview, OS version, and storage map</li>
@@ -256,9 +389,10 @@ Get-Content .\docs\notes.txt
       </section>
 
       <footer class="footer">
-        Developer: WabukoWabuko — basilwabbs@gmail.com — wabulo-portfolio.vercel.app
+        Developer: WabukoWabuko — basilwabbs@gmail.com — wabuko-portfolio.vercel.app
       </footer>
     </main>
   </div>
 </body>
 </html>
+
