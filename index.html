@@ -1,120 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GuruPath | The Full Spectrum Curriculum</title>
-    <style>
-        :root {
-            --guru-gold: #fbbf24;
-            --pro-blue: #0f172a;
-            --depth-green: #10b981;
-            --text-light: #f8fafc;
-            --card-bg: #ffffff;
-        }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f5f9; margin: 0; display: flex; }
-        
-        /* Sidebar Navigation */
-        nav { width: 300px; height: 100vh; background: var(--pro-blue); color: white; position: fixed; padding: 2rem 1rem; }
-        .nav-header { border-bottom: 1px solid #334155; padding-bottom: 1rem; margin-bottom: 2rem; }
-        .nav-header h2 { font-size: 1.5rem; color: var(--guru-gold); }
-        
-        .module-link { 
-            display: block; color: #94a3b8; text-decoration: none; padding: 1rem; 
-            border-radius: 8px; margin-bottom: 0.5rem; transition: 0.3s;
-        }
-        .module-link:hover { background: #1e293b; color: white; }
-        .module-link.active { background: var(--guru-gold); color: var(--pro-blue); font-weight: bold; }
-
-        /* Main Content */
-        main { margin-left: 300px; padding: 4rem; width: 100%; }
-        .hero { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        h1 { font-size: 3rem; color: var(--pro-blue); margin-top: 0; }
-        
-        .roadmap { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
-        .phase-card { 
-            background: white; padding: 2rem; border-radius: 15px; border-left: 5px solid var(--pro-blue);
-            transition: transform 0.3s;
-        }
-        .phase-card:hover { transform: translateY(-5px); }
-        .phase-num { font-weight: 800; color: var(--guru-gold); font-size: 0.9rem; text-transform: uppercase; }
-        
-        .btn { 
-            display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; 
-            background: var(--pro-blue); color: white; text-decoration: none; border-radius: 5px; 
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GuruPath | Full Spectrum Curriculum</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">GuruPath</div>
+      <div class="tagline">From baby steps to professional mastery.</div>
+      <nav class="nav">
+        <a class="active" href="index.html">Overview Roadmap</a>
+        <a href="basics.html">Module 01: Computer Architecture</a>
+        <a href="excel_guru.html">Module 02: Excel & Data Mastery</a>
+        <a href="analysis.html">Module 03: Statistical Analysis</a>
+        <a href="python.html">Module 04: Python Engineering</a>
+        <a href="tasks.html">Labs & Certification</a>
+        <a href="glossary.html">Glossary & Notions</a>
+        <a href="learning_path.html">Learning Path</a>
+      </nav>
+      <div class="meta">
+        Suggested pace: 6 to 8 weeks per module<br>
+        Format: Baby ? Builder ? Guru
+      </div>
+    </aside>
 
-<nav>
-    <div class="nav-header">
-        <h2>GuruPath AI</h2>
-        <p style="font-size: 0.8rem; opacity: 0.7;">Zero to Market-Ready</p>
-    </div>
-    <a href="index.html" class="module-link active">üè† Overview Roadmap</a>
-    <a href="basics.html" class="module-link">üíª 01. Computer Architecture</a>
-    <a href="excel_guru.html" class="module-link">üìä 02. Excel & Data Mastery</a>
-    <a href="analysis.html" class="module-link">üìà 03. Statistical Analysis</a>
-    <a href="python.html" class="module-link">üêç 04. Python Engineer</a>
-</nav>
-
-<main>
-    <div class="hero">
-        <span class="phase-num">The Curriculum</span>
-        <h1>From Newbie to Guru</h1>
-        <p style="font-size: 1.1rem; color: #64748b; max-width: 800px;">
-            This is an engineering-grade roadmap: each module teaches mental models, practical skills, and projects that map directly to workplace tasks.
+    <main class="main">
+      <section class="hero reveal">
+        <div class="badge">Curriculum Overview</div>
+        <h1>Teach clearly. Build confidence. Deliver mastery.</h1>
+        <p>
+          This tutorial site is designed to help you teach beginners who feel nervous around technology.
+          Every concept starts with a baby-friendly analogy, then grows into real tools, and finishes with
+          professional, job-ready practice.
         </p>
-        <p style="margin-top:1rem; font-size:0.95rem; color:#475569; max-width:800px;">Suggested pace: 6‚Äì8 weeks per module for a deep, project-based learning path. Each module contains conceptual sections, hands-on labs, and a capstone project.</p>
-    </div>
+        <div class="pill-group">
+          <div class="pill">Baby-to-Guru progression</div>
+          <div class="pill">Examples and analogies</div>
+          <div class="pill">Practice with rubrics</div>
+          <div class="pill">Instructor-ready prompts</div>
+        </div>
+        <div class="stack" style="margin-top: 22px;">
+          <a class="btn" href="learning_path.html">Start the Learning Path</a>
+          <a class="btn secondary" href="tasks.html">View Labs</a>
+        </div>
+      </section>
 
-    <div class="roadmap">
-        <div class="phase-card">
-            <span class="phase-num">Level 01</span>
-            <h3>Deep Architecture</h3>
-            <p>Understand how operating systems, storage, and networks work so you can reason about performance and reliability.</p>
-            <ul>
-                <li>Learning outcomes: process scheduling, filesystems, CLI automation.</li>
-                <li>Capstone: Build a guided system audit and document findings.</li>
+      <section class="section reveal">
+        <div class="section-title"><span>1</span>How to teach with this site</div>
+        <div class="grid three">
+          <div class="card">
+            <h3>Baby level</h3>
+            <p>Use analogies and plain language. Focus on everyday life connections.</p>
+            <ul class="list">
+              <li>Short sentences and stories</li>
+              <li>One idea at a time</li>
+              <li>Ask: ìWhat does this remind you of?î</li>
             </ul>
-            <a href="basics.html" class="btn">Explore Depth</a>
-        </div>
-        <div class="phase-card" style="border-left-color: var(--depth-green);">
-            <span class="phase-num">Level 02</span>
-            <h3>The Excel Engineer</h3>
-            <p>From clean-up pipelines (Power Query) to dynamic dashboards and automation with Office scripts.</p>
-            <ul>
-                <li>Learning outcomes: XLOOKUP, Power Query ETL, dynamic arrays, dashboarding.</li>
-                <li>Capstone: Deliver a production-quality financial dashboard with refreshable data.</li>
+          </div>
+          <div class="card">
+            <h3>Builder level</h3>
+            <p>Introduce tools and hands-on tasks with checklists.</p>
+            <ul class="list">
+              <li>Step-by-step exercises</li>
+              <li>Repeat until comfortable</li>
+              <li>Explain the ìwhyî after the ìhowî</li>
             </ul>
-            <a href="excel_guru.html" class="btn">Start Crunching</a>
+          </div>
+          <div class="card">
+            <h3>Guru level</h3>
+            <p>Shift to professional problem solving and clean output.</p>
+            <ul class="list">
+              <li>Debugging and trade-offs</li>
+              <li>Real-world datasets</li>
+              <li>Capstone delivery</li>
+            </ul>
+          </div>
         </div>
-        <div class="phase-card">
-            <span class="phase-num">Level 03</span>
-            <h3>Statistical Analysis</h3>
-            <p>Build intuition for distributions, hypothesis testing, and reproducible analysis.</p>
-            <a href="analysis.html" class="btn">Study Patterns</a>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>2</span>Module roadmap</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Module 01: Computer Architecture</strong>
+            <p>Understand OS basics, storage, networking, and CLI workflows.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Module 02: Excel & Data Mastery</strong>
+            <p>Design clean data flows, automate, and build dashboards.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Module 03: Statistical Analysis</strong>
+            <p>Learn distributions, inference, and experiment design.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Module 04: Python Engineering</strong>
+            <p>Automate workflows, build pipelines, and test code.</p>
+          </div>
         </div>
-        <div class="phase-card" style="border-left-color: #f97316;">
-            <span class="phase-num">Level 04</span>
-            <h3>Python Engineer</h3>
-            <p>Automation, data engineering, and quick tooling using Python and the PyData stack.</p>
-            <a href="python.html" class="btn">Automate Workflows</a>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>3</span>What learners will be able to do</div>
+        <div class="stats">
+          <div class="stat">
+            <div class="value">4</div>
+            <div class="label">Core modules</div>
+          </div>
+          <div class="stat">
+            <div class="value">30+</div>
+            <div class="label">Guided practice labs</div>
+          </div>
+          <div class="stat">
+            <div class="value">4</div>
+            <div class="label">Capstone projects</div>
+          </div>
+          <div class="stat">
+            <div class="value">100%</div>
+            <div class="label">Project-based learning</div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <section style="margin-top:2rem;">
-        <h3 style="margin-bottom:0.5rem;">Quick Start</h3>
-        <p style="color:#475569; max-width:800px;">To view the site locally open the HTML files directly in your browser. For iterative development run a quick static server (Python 3):</p>
-        <pre style="background:#f8fafc;border-radius:8px;padding:10px;">python -m http.server 8000</pre>
-    </section>
+      <section class="section reveal">
+        <div class="section-title"><span>4</span>Quick start</div>
+        <p>Open the HTML files directly, or run a local server for a smoother experience.</p>
+        <div class="code-block">python -m http.server 8000</div>
+        <p class="footer">Then open http://localhost:8000 in your browser.</p>
+      </section>
 
-    <footer style="margin-top:2rem; color:#475569;">
-        <strong>Developer:</strong> WabukoWabuko ‚Äî <a href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a> ¬∑ <a href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a>
-    </footer>
+      <section class="section reveal">
+        <div class="section-title"><span>5</span>Instructor toolkit</div>
+        <div class="grid three">
+          <div class="card">
+            <h3>Teaching prompts</h3>
+            <p>Each module includes prompts that keep students talking and thinking.</p>
+          </div>
+          <div class="card">
+            <h3>Guided labs</h3>
+            <p>Rubric-based labs to measure correctness and explanation.</p>
+          </div>
+          <div class="card">
+            <h3>Glossary</h3>
+            <p>Plain-English definitions for every important concept.</p>
+          </div>
+        </div>
+      </section>
 
-</main>
-
+      <footer class="footer">
+        Developer: WabukoWabuko ó basilwabbs@gmail.com ó wabulo-portfolio.vercel.app
+      </footer>
+    </main>
+  </div>
 </body>
 </html>

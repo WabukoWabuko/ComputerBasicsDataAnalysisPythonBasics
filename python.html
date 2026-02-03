@@ -1,83 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Module 04: Python Engineering</title>
-    <style>
-        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; background: #fafafa; }
-        .sidebar { width: 300px; background: #374151; color: white; height: 100vh; position: fixed; padding: 2rem; }
-        .content { margin-left: 300px; padding: 4rem; max-width: 900px; }
-        .code-block { background: #111827; color: #e5e7eb; padding: 2rem; border-radius: 12px; font-family: 'Fira Code', monospace; line-height: 1.5; }
-        .keyword { color: #f472b6; }
-        .func { color: #60a5fa; }
-        .string { color: #34d399; }
-        .comment { color: #9ca3af; font-style: italic; }
-        .guru-task { background: #eef2ff; border-left: 6px solid #4338ca; padding: 2rem; margin-top: 2rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 04: Python Engineering</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="sidebar">
-    <small>MODULE 04</small>
-    <h1>Python Guru</h1>
-    <p>Target: Automation & Data Engineering.</p>
-    <a href="index.html" style="color: #93c5fd; text-decoration: none;">← Roadmap</a>
-</div>
-<div class="content">
-    <h2>Data Structures: The Guru's Toolbox</h2>
-    <p>Basic variables store one value. <strong>Lists</strong> and <strong>Dictionaries</strong> store thousands.</p>
-    
-    <div class="code-block">
-<span class="comment"># A Dictionary (Key-Value Pairs)</span>
-user_data = {
-    <span class="string">"name"</span>: <span class="string">"Alice"</span>,
-    <span class="string">"role"</span>: <span class="string">"Data Analyst"</span>,
-    <span class="string">"projects"</span>: [<span class="string">"Sales"</span>, <span class="string">"Growth"</span>]
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Module 04</div>
+      <div class="tagline">Python Engineering</div>
+      <nav class="nav">
+        <a href="index.html">Overview Roadmap</a>
+        <a href="basics.html">Module 01: Computer Architecture</a>
+        <a href="excel_guru.html">Module 02: Excel & Data Mastery</a>
+        <a href="analysis.html">Module 03: Statistical Analysis</a>
+        <a class="active" href="python.html">Module 04: Python Engineering</a>
+        <a href="tasks.html">Labs & Certification</a>
+        <a href="glossary.html">Glossary & Notions</a>
+        <a href="learning_path.html">Learning Path</a>
+      </nav>
+      <div class="meta">Focus: automation, pipelines, packaging, testing</div>
+    </aside>
+
+    <main class="main">
+      <section class="hero reveal">
+        <div class="badge">Module 04</div>
+        <h1>Automate workflows and ship reliable data tools.</h1>
+        <p>
+          Python turns manual tasks into repeatable systems. We begin with baby-friendly stories about
+          instructions, then move to real pipelines, testing, and deployment.
+        </p>
+        <div class="pill-group">
+          <div class="pill">Core syntax</div>
+          <div class="pill">Pandas pipelines</div>
+          <div class="pill">Automation</div>
+          <div class="pill">Testing and packaging</div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>1</span>Baby-to-guru ladder</div>
+        <div class="levels">
+          <div class="level">
+            <div class="label">Baby explanation</div>
+            <p>A program is a list of simple instructions, like a recipe.</p>
+          </div>
+          <div class="level">
+            <div class="label">Builder explanation</div>
+            <p>Variables hold values, loops repeat tasks, and functions group steps.</p>
+          </div>
+          <div class="level">
+            <div class="label">Guru explanation</div>
+            <p>We build pipelines with validation, logging, tests, and deployment checks.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>2</span>Foundations</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Data structures</h3>
+            <p><strong>Baby:</strong> A list is a basket of items.</p>
+            <p><strong>Builder:</strong> Dictionaries store key-value pairs.</p>
+            <div class="code-block">user = {
+  "name": "Alex",
+  "role": "Analyst",
+  "projects": ["Sales", "Growth"]
 }
+for project in user["projects"]:
+  print(f"Reviewing {project}")</div>
+          </div>
+          <div class="card">
+            <h3>Control flow</h3>
+            <p>Teach loops and conditionals through realistic tasks.</p>
+            <ul class="list">
+              <li>Validate data entries</li>
+              <li>Branch on missing values</li>
+              <li>Summarize with grouped metrics</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-<span class="comment"># Logic: The Loop</span>
-<span class="keyword">for</span> project <span class="keyword">in</span> user_data[<span class="string">"projects"</span>]:
-    <span class="func">print</span>(f<span class="string">"Checking status of: {project}"</span>)
-    </div>
-
-    <div class="guru-task">
-        <h3>🚀 Real-World Task: The Automator</h3>
-        <p><strong>Scenario:</strong> You have 500 Excel files. Doing it manually takes 10 hours.</p>
-        <p><strong>The Guru Solution:</strong> Write a Python script using the <code>pandas</code> library to open all 500 files, calculate the total sales, and save it into a "Master Report" in 3 seconds.</p>
-        <p><em>Focus on teaching the "Why" before the syntax.</em></p>
-    </div>
-    
-    <div class="card" style="margin-top:1.5rem;">
-        <h2>Environment & Tooling</h2>
-        <p>Set up an isolated environment using <code>venv</code> or <code>conda</code>. Install common packages:</p>
-        <pre class="code-block">python -m venv .venv
-source .venv/bin/activate  # POSIX
-.venv\Scripts\activate     # Windows
-pip install pandas numpy jupyter</pre>
-        <p>Use <code>jupyter</code> for interactive exploration and <code>pytest</code> for tests.</p>
-    </div>
-
-    <div class="card">
-        <h2>Example: Merge many CSV files with pandas</h2>
-        <div class="code-block">
-from pathlib import Path
+      <section class="section reveal">
+        <div class="section-title"><span>3</span>Data pipeline example</div>
+        <div class="code-block">from pathlib import Path
 import pandas as pd
 
-files = list(Path('data').glob('*.csv'))
-df = pd.concat((pd.read_csv(f) for f in files), ignore_index=True)
-summary = df.groupby('region')['sales'].sum().reset_index()
-summary.to_csv('master_report.csv', index=False)
-        </div>
-        <p><strong>Explanation:</strong> Use streaming reads for very large files and validate column types before concatenation.</p>
-    </div>
-
-    <div class="card">
-        <h2>Testing & Deployment</h2>
-        <p>Write small unit tests for critical data transformations. Example test ideas: schema validation, aggregation correctness, and missing value handling.</p>
-    </div>
-
-    <footer style="margin-top:1.5rem; color:#475569;">
-        <strong>Developer:</strong> WabukoWabuko — <a href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a> · <a href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a>
-    </footer>
+files = list(Path("data").glob("*.csv"))
+frames = [pd.read_csv(f) for f in files]
+raw = pd.concat(frames, ignore_index=True)
+clean = raw.dropna(subset=["region", "sales"]).copy()
+summary = clean.groupby("region")["sales"].sum().reset_index()
+summary.to_csv("master_report.csv", index=False)
 </div>
+        <p class="footer">Explain schema checks and type casting before grouping.</p>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>4</span>Automation projects</div>
+        <div class="grid three">
+          <div class="card">
+            <h3>Batch reporting</h3>
+            <p>Open 500 Excel files, extract totals, and compile a master report.</p>
+          </div>
+          <div class="card">
+            <h3>File monitoring</h3>
+            <p>Watch a folder and trigger a pipeline when new data arrives.</p>
+          </div>
+          <div class="card">
+            <h3>API integration</h3>
+            <p>Pull JSON data and merge it with internal datasets.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>5</span>Environment setup</div>
+        <div class="code-block">python -m venv .venv
+.venv\Scripts\activate
+pip install pandas numpy jupyter pytest
+</div>
+        <p class="footer">Teach why isolation prevents dependency conflicts.</p>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>6</span>Testing and quality</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Unit tests</h3>
+            <p>Validate transformations, schema, and edge cases.</p>
+          </div>
+          <div class="card">
+            <h3>Logging and errors</h3>
+            <p>Add logging to track runtime events and data anomalies.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>7</span>Capstone</div>
+        <p>Deliver a Python automation toolkit that includes:</p>
+        <ul class="list">
+          <li>Config-driven data ingestion</li>
+          <li>Quality checks and error reports</li>
+          <li>CLI entry point for one-command execution</li>
+          <li>Unit tests for critical transformations</li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        Developer: WabukoWabuko � basilwabbs@gmail.com � wabulo-portfolio.vercel.app
+      </footer>
+    </main>
+  </div>
 </body>
 </html>

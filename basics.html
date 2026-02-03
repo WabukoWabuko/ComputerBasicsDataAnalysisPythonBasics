@@ -1,203 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Module 01: Computer Architecture & Systems</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
-    <style>
-        :root { --pro-blue: #0f172a; --accent: #3b82f6; --bg: #f8fafc; }
-        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; background: var(--bg); color: var(--pro-blue); }
-        .sidebar { width: 300px; background: var(--pro-blue); color: white; height: 100vh; position: fixed; padding: 2rem; box-sizing: border-box; }
-        .content { margin-left: 300px; padding: 4rem; max-width: 1000px; }
-        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 18px rgba(15,23,42,0.06); margin-bottom: 1.5rem; }
-        .cmd-line { background: #0b1220; color: #38bdf8; padding: 1rem; border-radius: 6px; font-family: 'Fira Code', monospace; }
-        .badge { background: #3b82f6; color: white; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; }
-        h2 { color: var(--pro-blue); border-left: 4px solid var(--accent); padding-left: 1rem; }
-        footer { margin-top: 2rem; font-size: 0.9rem; color: #475569; }
-        a.dev-link { color: #2563eb; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 01: Computer Architecture & Systems</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="sidebar">
-    <small style="letter-spacing:2px">MODULE 01</small>
-    <h2>System Architecture</h2>
-    <p style="opacity:0.8;">Topics: Hardware abstraction · OS Kernels · CLI · Networking</p>
-    <hr style="opacity:0.15; margin: 1.5rem 0;">
-    <nav style="font-size:0.95rem;">
-        <p>• Kernel vs Userland</p>
-        <p>• Processes & Scheduling</p>
-        <p>• Filesystems & Storage</p>
-        <p>• Networking basics</p>
-    </nav>
-    <div style="position:absolute; bottom:2rem; left:2rem; right:2rem; font-size:0.85rem; opacity:0.9;">
-        <p style="margin:0">Developer: <strong>WabukoWabuko</strong></p>
-        <p style="margin:0">Email: <a class="dev-link" href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a></p>
-        <p style="margin:0">Portfolio: <a class="dev-link" href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a></p>
-    </div>
-</div>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Module 01</div>
+      <div class="tagline">Computer Architecture & Systems</div>
+      <nav class="nav">
+        <a href="index.html">Overview Roadmap</a>
+        <a class="active" href="basics.html">Module 01: Computer Architecture</a>
+        <a href="excel_guru.html">Module 02: Excel & Data Mastery</a>
+        <a href="analysis.html">Module 03: Statistical Analysis</a>
+        <a href="python.html">Module 04: Python Engineering</a>
+        <a href="tasks.html">Labs & Certification</a>
+        <a href="glossary.html">Glossary & Notions</a>
+        <a href="learning_path.html">Learning Path</a>
+      </nav>
+      <div class="meta">
+        Focus: OS, storage, networking, CLI<br>
+        Progression: Baby ? Builder ? Guru
+      </div>
+    </aside>
 
-<div class="content">
-    <div class="card">
-        <span class="badge">DEEP DIVE</span>
-        <h2>The Kernel, Userland, and the Shell</h2>
-        <p>The kernel is the trusted core that manages CPU, memory, devices, and system calls. Userland (user-space) runs applications in isolated processes. The shell is one userland program that translates human commands into system calls.</p>
-        <ul>
-            <li><strong>Process:</strong> A running program with its own memory space.</li>
-            <li><strong>Thread:</strong> A schedulable unit inside a process sharing memory.</li>
-            <li><strong>Context Switch:</strong> When the CPU switches which process/thread it runs.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>CLI Fundamentals — Practical Examples</h2>
-        <p>The command line enables automation, reproducibility, and speed. Below are common commands with examples (Windows & POSIX notes):</p>
-        <div class="cmd-line">
-            &gt; cd Desktop\Project_X  &nbsp;&nbsp; (Windows path example)<br>
-            &gt; mkdir assets scripts docs<br>
-            &gt; dir /s  &nbsp;&nbsp; (Windows) — or &nbsp;&nbsp; &gt; ls -la (POSIX)
+    <main class="main">
+      <section class="hero reveal">
+        <div class="badge">Module 01</div>
+        <h1>Understand the system before you optimize it.</h1>
+        <p>
+          This module starts with simple, child-friendly explanations of how computers work,
+          then moves toward professional debugging, performance, and reliability skills.
+        </p>
+        <div class="pill-group">
+          <div class="pill">Hardware + OS</div>
+          <div class="pill">Filesystems</div>
+          <div class="pill">Networking</div>
+          <div class="pill">CLI automation</div>
         </div>
-        <p><strong>Teaching tip:</strong> Show the student how to combine commands into scripts to repeat tasks reliably.</p>
-    </div>
+      </section>
 
-    <div class="card">
-        <h2>Hardware Abstraction Layer (HAL)</h2>
-        <p>HALs provide drivers and device interfaces that allow OS components to access hardware without per-device logic spread across the system. This increases portability and safety.</p>
-        <p><strong>Example:</strong> Print spooling — applications submit print jobs, the OS/driver translates and queues them, and the hardware prints independently.</p>
-    </div>
-
-    <div class="card" style="border-top:4px solid #ef4444;">
-        <h2>Networking Essentials (How the Web Works)</h2>
-        <p>At a high level: DNS → TCP/IP → TLS → HTTP. DNS resolves names to IPs; TCP provides reliable transport; TLS secures the connection; HTTP carries the application data (HTML/CSS/JSON).</p>
-        <p><strong>Step-by-step request:</strong></p>
-        <ol>
-            <li>Browser resolves domain via DNS.</li>
-            <li>Client opens TCP connection to server IP:port (usually 443 for HTTPS).</li>
-            <li>TLS handshake establishes encrypted channel.</li>
-            <li>Client sends HTTP request and receives response (HTML).</li>
-        </ol>
-        <p><strong>Practical:</strong> Use browser dev tools Network tab to inspect request/response headers and timing.</p>
-    </div>
-
-    <div class="card">
-        <h2>Filesystems & Persistent Storage</h2>
-        <p>Compare storage types: RAM (volatile, fast), SSD/NVMe (non-volatile, fast), HDD (non-volatile, cheaper). Understand journaled filesystems (NTFS, ext4) vs. log-structured (btrfs).</p>
-        <p><strong>Exercise:</strong> Ask the student to explain why swap exists and when it's helpful versus when it hurts performance.</p>
-    </div>
-
-    <footer>
-        <strong>Further reading:</strong> <a href="https://en.wikipedia.org/wiki/Operating_system" target="_blank">Operating system (Wikipedia)</a> · <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_requests" target="_blank">HTTP request lifecycle (MDN)</a>
-    </footer>
-</div>
-</body>
-</html>
-<!-- Developer Information -->
-<div class="developer-info">
-    <h2>Developer Information</h2>
-    <p>Developer: Wabuko</p>
-    <p>Email: <a href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a></p>
-    <p>Portfolio: <a href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a></p>
-</div>
-
-<div class="guru-card">
-    <h2>Understanding Hardware Abstraction</h2>
-    <p>Hardware abstraction allows the operating system to interact with hardware without needing to know the details of the hardware itself. This is crucial for compatibility and efficiency.</p>
-    <p><strong>Example:</strong> When you print a document, the OS sends a command to the printer driver, which translates it into a format the printer understands.</p>
-</div>
-
-<div class="guru-card">
-    <h2>Operating System Kernels</h2>
-    <p>The kernel is the core component of an OS, managing system resources and communication between hardware and software.</p>
-    <p><strong>Example:</strong> In Linux, the kernel can be monolithic or microkernel, affecting performance and modularity.</p>
-</div>
-
-<div class="guru-card">
-    <h2>Command Line Interface (CLI) Commands</h2>
-    <p>Understanding CLI commands is essential for efficient file management and system navigation.</p>
-    <ul>
-        <li><strong>mkdir:</strong> Creates a new directory.</li>
-        <li><strong>cd:</strong> Changes the current directory.</li>
-        <li><strong>dir:</strong> Lists files and directories.</li>
-    </ul>
-</div>
-
-<div class="guru-card">
-    <h2>Networking Basics</h2>
-    <p>Networking is the practice of connecting computers and other devices to share resources.</p>
-    <p><strong>Example:</strong> A local area network (LAN) connects computers in a small area, like a home or office.</p>
-</div>
-
-<div class="guru-card">
-    <h2>Understanding DNS</h2>
-    <p>The Domain Name System (DNS) translates human-friendly domain names into IP addresses.</p>
-    <p><strong>Example:</strong> When you enter <em>example.com</em>, DNS resolves it to an IP address, allowing your browser to locate the server.</p>
-</div>
-
-<div class="guru-card">
-    <h2>Web Technologies</h2>
-    <p>Web technologies include HTML, CSS, and JavaScript, which are essential for creating and managing websites.</p>
-    <p><strong>Example:</strong> HTML structures the content, CSS styles it, and JavaScript adds interactivity.</p>
-</div>
-
-<div class="guru-card">
-    <h2>Conclusion</h2>
-    <p>Understanding these foundational concepts is crucial for anyone looking to delve deeper into computer science and technology.</p>
-</div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Module 01: Computer Architecture & Systems</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
-    <style>
-        :root { --pro-blue: #0f172a; --accent: #3b82f6; --bg: #f8fafc; }
-        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; background: var(--bg); }
-        .sidebar { width: 300px; background: var(--pro-blue); color: white; height: 100vh; position: fixed; padding: 2rem; }
-        .content { margin-left: 300px; padding: 4rem; max-width: 900px; }
-        .guru-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 2rem; }
-        .cmd-line { background: #1e293b; color: #38bdf8; padding: 1rem; border-radius: 6px; font-family: 'Fira Code', monospace; }
-        .badge { background: #3b82f6; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
-        h2 { color: var(--pro-blue); border-left: 4px solid var(--accent); padding-left: 1rem; }
-    </style>
-</head>
-<body>
-<div class="sidebar">
-    <small>MODULE 01</small>
-    <h2>System Architecture</h2>
-    <hr style="opacity:0.2; margin: 2rem 0;">
-    <p>Topics: Hardware abstraction, OS Kernels, CLI, and Networking.</p>
-    <a href="index.html" style="color: #60a5fa; text-decoration: none;">← Return to Roadmap</a>
-</div>
-<div class="content">
-    <div class="guru-card">
-        <span class="badge">DEEP DIVE</span>
-        <h2>The Kernel and the Shell</h2>
-        <p>A "Guru" understands that the Windows you see is just a <strong>GUI</strong> (Graphical User Interface). Underneath sits the <strong>Kernel</strong>.</p>
-        <ul>
-            <li><strong>The Kernel:</strong> The manager. It decides which app gets to use the CPU or RAM.</li>
-            <li><strong>The Shell:</strong> The interface that lets humans talk to the Kernel.</li>
-        </ul>
-    </div>
-
-    <div class="guru-card">
-        <h2>The Command Line Interface (CLI)</h2>
-        <p>Gurus don't use folders to move files; they use the terminal for speed and automation.</p>
-        <div class="cmd-line">
-            > cd Desktop/Project_X<br>
-            > mkdir assets scripts docs<br>
-            > dir /s
+      <section class="section reveal">
+        <div class="section-title"><span>1</span>Baby-to-guru ladder</div>
+        <div class="levels">
+          <div class="level">
+            <div class="label">Baby explanation</div>
+            <p>The computer is like a kitchen. The <strong>CPU</strong> is the chef, <strong>RAM</strong> is the counter
+              where the chef works, and the <strong>storage</strong> is the pantry where food is kept.</p>
+          </div>
+          <div class="level">
+            <div class="label">Builder explanation</div>
+            <p>The CPU executes instructions, RAM holds active data, and storage keeps data long-term.
+              When RAM fills up, the OS uses disk swap, which is slower.</p>
+          </div>
+          <div class="level">
+            <div class="label">Guru explanation</div>
+            <p>Performance depends on working set size, cache locality, and IO throughput.
+              Diagnose by observing CPU utilization, memory pressure, and disk queue length.</p>
+          </div>
         </div>
-        <p><small>Try explaining `mkdir` (Make Directory) and `cd` (Change Directory) to the student.</small></p>
-    </div>
+      </section>
 
-    <div class="guru-card" style="border-top: 4px solid #ef4444;">
-        <h2>Networking & The Web Guru</h2>
-        <p>How does the internet *actually* work? Explain the <strong>DNS</strong> (The Phonebook of the Internet).</p>
-        <p><strong>Step-by-Step:</strong><br>
-        1. User types <em>google.com</em>.<br>
-        2. DNS converts it to an <strong>IP Address</strong> (e.g., 142.250.190.46).<br>
-        3. Your computer sends a <strong>Request</strong>; the server sends a <strong>Response</strong> (HTML).</p>
-    </div>
+      <section class="section reveal">
+        <div class="section-title"><span>2</span>Core mental models</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Kernel vs user space</h3>
+            <p><strong>Baby:</strong> The kernel is the �boss� that tells apps when they can use the computer.</p>
+            <p><strong>Builder:</strong> Apps run in user space and ask the kernel for access via system calls.</p>
+            <p><strong>Guru:</strong> Kernel scheduling, memory protection, and driver control create stability.</p>
+            <ul class="list">
+              <li>Process = running program with its own memory space</li>
+              <li>Thread = execution unit inside a process</li>
+              <li>Context switch = CPU shifts between processes</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Storage hierarchy</h3>
+            <p><strong>Baby:</strong> Pantry (storage) is slow, counter (RAM) is fast.</p>
+            <p><strong>Builder:</strong> SSDs are faster than HDDs but cost more per GB.</p>
+            <p><strong>Guru:</strong> Choose NVMe for high IOPS, and plan backups for durability.</p>
+            <ul class="list">
+              <li>Cache/RAM for speed</li>
+              <li>SSD/NVMe for low latency</li>
+              <li>HDD for large archives</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>3</span>Real-world relationships</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Why the computer �freezes�</h3>
+            <p><strong>Baby:</strong> Too many toys on a small table.</p>
+            <p><strong>Builder:</strong> RAM is full, the OS moves data to disk, everything slows down.</p>
+            <p><strong>Guru:</strong> Identify memory pressure and reduce working set or add RAM.</p>
+          </div>
+          <div class="card">
+            <h3>Why websites feel slow</h3>
+            <p><strong>Baby:</strong> The message is traveling a long road.</p>
+            <p><strong>Builder:</strong> DNS + TCP + TLS adds time, plus server delay.</p>
+            <p><strong>Guru:</strong> Measure latency, server response, and render blocking assets.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>4</span>CLI practice</div>
+        <p>Teach learners to automate repetitive tasks using a clear command sequence.</p>
+        <div class="code-block">cd Desktop\Project_X
+mkdir assets scripts docs
+Get-ChildItem -Recurse
+Get-Content .\docs\notes.txt
 </div>
+        <div class="callout" style="margin-top: 16px;">
+          <strong>Instructor tip:</strong> After each command, ask learners to explain what changed.</n        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>5</span>Networking essentials</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Request lifecycle</h3>
+            <p><strong>Baby:</strong> You ask a librarian for a book.</p>
+            <p><strong>Builder:</strong> DNS resolves domain, TCP connects, TLS encrypts, HTTP delivers.</p>
+            <p><strong>Guru:</strong> Diagnose by inspecting headers, round-trip time, and status codes.</p>
+          </div>
+          <div class="card">
+            <h3>Debugging checklist</h3>
+            <ul class="list">
+              <li>Can you resolve the domain?</li>
+              <li>Is port 443 reachable?</li>
+              <li>Are you blocked by a proxy or firewall?</li>
+              <li>Is the server returning 4xx or 5xx?</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>6</span>Guided labs</div>
+        <div class="grid three">
+          <div class="card">
+            <h3>Lab 1: System audit</h3>
+            <p>Inventory storage, running processes, and network interfaces.</p>
+            <ul class="list">
+              <li>Report on top CPU processes</li>
+              <li>Explain RAM vs swap usage</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Lab 2: Filesystem design</h3>
+            <p>Build a workspace with naming conventions and backup rules.</p>
+            <ul class="list">
+              <li>Standardize folder layout</li>
+              <li>Set up a backup script</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Lab 3: Network walkthrough</h3>
+            <p>Trace a web request and explain each step in plain language.</p>
+            <ul class="list">
+              <li>Capture headers</li>
+              <li>Explain response codes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>7</span>Capstone</div>
+        <p>Build a guided system audit report that includes:</p>
+        <ul class="list">
+          <li>Hardware overview, OS version, and storage map</li>
+          <li>Top five resource-hungry processes</li>
+          <li>Network map with DNS and latency notes</li>
+          <li>Recommendations for stability and performance</li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        Developer: WabukoWabuko � basilwabbs@gmail.com � wabulo-portfolio.vercel.app
+      </footer>
+    </main>
+  </div>
 </body>
 </html>

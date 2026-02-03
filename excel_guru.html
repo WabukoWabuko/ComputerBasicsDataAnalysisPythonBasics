@@ -1,105 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Module 02: Excel Guru & Data Modeling</title>
-    <style>
-        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: #334155; margin: 0; display: flex; }
-        .sidebar { width: 300px; background: #064e3b; color: white; height: 100vh; position: fixed; padding: 2rem; }
-        .content { margin-left: 300px; padding: 4rem; max-width: 900px; }
-        
-        .guru-section { margin-bottom: 4rem; padding: 2rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; }
-        h2 { color: #064e3b; border-bottom: 2px solid #059669; padding-bottom: 0.5rem; }
-        
-        .technical-spec { 
-            background: #1e293b; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; 
-            font-family: 'Courier New', monospace; font-size: 0.9rem; margin: 1rem 0;
-        }
-        
-        .task-box { 
-            background: #fff7ed; border: 2px dashed #f97316; padding: 1.5rem; border-radius: 8px; 
-            margin-top: 2rem;
-        }
-        
-        .badge { background: #059669; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 02: Excel & Data Mastery</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Module 02</div>
+      <div class="tagline">Excel & Data Mastery</div>
+      <nav class="nav">
+        <a href="index.html">Overview Roadmap</a>
+        <a href="basics.html">Module 01: Computer Architecture</a>
+        <a class="active" href="excel_guru.html">Module 02: Excel & Data Mastery</a>
+        <a href="analysis.html">Module 03: Statistical Analysis</a>
+        <a href="python.html">Module 04: Python Engineering</a>
+        <a href="tasks.html">Labs & Certification</a>
+        <a href="glossary.html">Glossary & Notions</a>
+        <a href="learning_path.html">Learning Path</a>
+      </nav>
+      <div class="meta">Focus: Power Query, dynamic arrays, dashboards</div>
+    </aside>
 
-<div class="sidebar">
-    <h3>Module 02</h3>
-    <h1>Excel Guru</h1>
-    <p>Target: Financial Analyst / Data Auditor Level</p>
-    <hr style="opacity: 0.2; margin: 2rem 0;">
-    <ul style="list-style: none; padding: 0;">
-        <li>🔹 Lookup Architecture</li>
-        <li>🔹 Logic Nesting</li>
-        <li>🔹 Power Query (ETL)</li>
-        <li>🔹 Data Modeling</li>
-    </ul>
-    <br>
-    <a href="index.html" style="color: #6ee7b7; text-decoration: none;">← Back to Hub</a>
-</div>
-
-<div class="content">
-    <section class="guru-section">
-        <span class="badge">Level: Expert</span>
-        <h2>1. Advanced Lookup Architecture</h2>
-        <p>A Guru never uses <code>VLOOKUP</code>. We use <code>XLOOKUP</code> or <code>INDEX/MATCH</code> for non-volatile, bi-directional data retrieval.</p>
-        
-        <h4>The "Why":</h4>
-        <p>VLOOKUP breaks if you insert a column. INDEX/MATCH is dynamic—it maps the memory address of the data instead of a static number.</p>
-        
-        <div class="technical-spec">
-            Syntax: =INDEX(return_range, MATCH(lookup_value, lookup_range, 0))
+    <main class="main">
+      <section class="hero reveal">
+        <div class="badge">Module 02</div>
+        <h1>Build spreadsheets that think, update, and explain themselves.</h1>
+        <p>
+          Start with simple tables, then learn how to clean data, create fast lookups, and build dashboards
+          that update with one click. Every step includes baby-friendly explanations and pro-level output.
+        </p>
+        <div class="pill-group">
+          <div class="pill">XLOOKUP and INDEX/MATCH</div>
+          <div class="pill">Power Query ETL</div>
+          <div class="pill">Dynamic arrays</div>
+          <div class="pill">Dashboard design</div>
         </div>
-        
-        <ul>
-            <li><strong>Exact Match vs. Wildcards:</strong> Using `*` for partial text searches.</li>
-            <li><strong>2-Way Lookups:</strong> Finding data at the intersection of a specific Row AND Column.</li>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>1</span>Baby-to-guru ladder</div>
+        <div class="levels">
+          <div class="level">
+            <div class="label">Baby explanation</div>
+            <p>A spreadsheet is like a big grid notebook. Each box can hold a number or a word.</p>
+          </div>
+          <div class="level">
+            <div class="label">Builder explanation</div>
+            <p>Tables organize data into columns with names. Formulas reference those columns by name.</p>
+          </div>
+          <div class="level">
+            <div class="label">Guru explanation</div>
+            <p>Model data with clean tables, use relationships, and design a dashboard that refreshes automatically.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>2</span>Lookup architecture</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Modern lookup approach</h3>
+            <p><strong>Baby:</strong> Find a student name by looking at their ID card.</p>
+            <p><strong>Builder:</strong> Use XLOOKUP to match IDs safely.</p>
+            <div class="code-block">=XLOOKUP(A2, Customers[ID], Customers[Status], "Not found")</div>
+            <p class="footer">Explain why column insertions break VLOOKUP and how XLOOKUP avoids it.</p>
+          </div>
+          <div class="card">
+            <h3>Two-way lookup</h3>
+            <p><strong>Baby:</strong> Find the box where row and column meet.</p>
+            <p><strong>Builder:</strong> Use INDEX/MATCH to find the intersection.</p>
+            <div class="code-block">=INDEX(Metrics, MATCH(A2, Regions, 0), MATCH(B2, Months, 0))</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>3</span>Power Query ETL</div>
+        <div class="grid three">
+          <div class="card">
+            <h3>Extract</h3>
+            <p>Import from CSV, folders, or databases.</p>
+            <ul class="list">
+              <li>Combine monthly files</li>
+              <li>Standardize column types</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Transform</h3>
+            <p>Clean, trim, and normalize.</p>
+            <ul class="list">
+              <li>Split columns by delimiter</li>
+              <li>Unpivot for tidy data</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Load</h3>
+            <p>Deliver clean tables into the model.</p>
+            <ul class="list">
+              <li>Refreshable tables</li>
+              <li>Data model relationships</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout" style="margin-top: 16px;">
+          <strong>Lab:</strong> Build a refreshable dataset from 12 messy CSV files and log each step.
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>4</span>Dynamic arrays</div>
+        <p><strong>Baby:</strong> The formula spills the answer into many boxes.</p>
+        <p><strong>Builder:</strong> Use FILTER and SORT to automatically update results.</p>
+        <div class="code-block">=SORT(FILTER(Sales[Amount], Sales[Region]=F2), 1, -1)</div>
+        <div class="grid two" style="margin-top: 16px;">
+          <div class="card">
+            <h3>Spill range design</h3>
+            <p>Leave space for spill results and reference the spill with #.</p>
+          </div>
+          <div class="card">
+            <h3>Error handling</h3>
+            <p>Use IFERROR or IFNA to keep dashboards clean.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>5</span>Dashboard engineering</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Visual hierarchy</h3>
+            <p>Show KPIs first, then supporting trends, then tables for detail.</p>
+            <ul class="list">
+              <li>Top row: KPIs and variance</li>
+              <li>Middle: trend and breakdown charts</li>
+              <li>Bottom: detailed tables</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Interactivity</h3>
+            <p>Use slicers and data validation to control the dashboard.</p>
+            <ul class="list">
+              <li>Department slicer</li>
+              <li>Date range controls</li>
+              <li>Conditional formatting</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout" style="margin-top: 16px;">
+          <strong>Guru task:</strong> Build a KPI dashboard that updates in one click and includes a data quality log.
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>6</span>Capstone project</div>
+        <p>Deliver a production-ready financial dashboard that includes:</p>
+        <ul class="list">
+          <li>Power Query pipeline with refreshable sources</li>
+          <li>Dynamic chart suite with slicer controls</li>
+          <li>Audit sheet listing assumptions and data quality notes</li>
         </ul>
-    </section>
+      </section>
 
-    <section class="guru-section">
-        <span class="badge">Level: Architect</span>
-        <h2>2. The Power Query Revolution (ETL)</h2>
-        <p>In the real market, data is messy. Gurus don't clean data manually; they build <strong>ETL Pipelines</strong> (Extract, Transform, Load).</p>
-        
-        <div class="task-box">
-            <strong>Guru Task 2.1: Automated Cleanup</strong>
-            <ol>
-                <li>Import a "dirty" CSV with inconsistent dates and extra spaces.</li>
-                <li>Use <em>Power Query Editor</em> to "Trim" and "Clean" text.</li>
-                <li>Pivot/Unpivot columns to normalize the data.</li>
-                <li>Hit "Refresh" to apply all steps to a brand new file instantly.</li>
-            </ol>
-        </div>
-    </section>
-
-    <section class="guru-section">
-        <h2>3. Array Formulas & Dynamic Spill</h2>
-        <p>Mastering the new Excel engine (`#` notation).</p>
-        <div class="technical-spec">
-            =SORT(FILTER(A2:C100, B2:B100 > 500), 3, -1)
-        </div>
-        <p>This single line replaces hours of manual sorting and filtering. It creates a "Spill Range" that updates automatically as data grows.</p>
-    </section>
-
-    <div class="task-box" style="background: #eff6ff; border-color: #3b82f6;">
-        <h3>🏁 Weekly Guru Project: The Dashboard</h3>
-        <p>The student must build a <strong>Dynamic Financial Dashboard</strong> that:</p>
-        <ul>
-            <li>Uses 100% Formulas (No hard-coded numbers).</li>
-            <li>Features a "Slicer" that updates 4 charts simultaneously.</li>
-            <li>Includes a "Data Validation" dropdown to switch between departments.</li>
-        </ul>
-    </div>
-</div>
-
-<footer style="margin:2rem 4rem; color:#475569;">
-    <strong>Developer:</strong> WabukoWabuko — <a href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a> · <a href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a>
-</footer>
-
-
+      <footer class="footer">
+        Developer: WabukoWabuko � basilwabbs@gmail.com � wabulo-portfolio.vercel.app
+      </footer>
+    </main>
+  </div>
 </body>
 </html>

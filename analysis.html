@@ -1,161 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Module 03: Statistical Analysis & Data Science</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --stat-purple: #6d28d9;
-            --stat-light: #f5f3ff;
-            --text: #1e293b;
-            --sidebar-bg: #1e1b4b;
-        }
-        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; background: #fcfcfd; color: var(--text); }
-        
-        .sidebar { width: 300px; background: var(--sidebar-bg); color: white; height: 100vh; position: fixed; padding: 2rem; }
-        .content { margin-left: 300px; padding: 4rem; max-width: 950px; }
-        
-        .guru-box { 
-            background: white; border: 1px solid #e2e8f0; border-radius: 16px; 
-            padding: 2.5rem; margin-bottom: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
-        }
-        
-        h2 { color: var(--stat-purple); font-size: 1.8rem; margin-top: 0; }
-        .math-block { 
-            background: var(--stat-light); border-left: 5px solid var(--stat-purple); 
-            padding: 1.5rem; margin: 1.5rem 0; font-family: 'Fira Code', monospace;
-        }
-
-        .visual-demo {
-            display: flex; gap: 10px; align-items: flex-end; height: 100px; padding: 20px;
-            background: #f1f5f9; border-radius: 8px; margin: 1rem 0;
-        }
-        .bar { background: var(--stat-purple); width: 30px; transition: 0.5s; }
-        
-        .warning-box {
-            background: #fff1f2; border: 1px solid #fecdd3; color: #9f1239;
-            padding: 1.2rem; border-radius: 8px; margin-top: 1rem;
-        }
-        
-        .badge { background: var(--stat-purple); color: white; padding: 4px 12px; border-radius: 99px; font-size: 0.8rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 03: Statistical Analysis</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Module 03</div>
+      <div class="tagline">Statistical Analysis</div>
+      <nav class="nav">
+        <a href="index.html">Overview Roadmap</a>
+        <a href="basics.html">Module 01: Computer Architecture</a>
+        <a href="excel_guru.html">Module 02: Excel & Data Mastery</a>
+        <a class="active" href="analysis.html">Module 03: Statistical Analysis</a>
+        <a href="python.html">Module 04: Python Engineering</a>
+        <a href="tasks.html">Labs & Certification</a>
+        <a href="glossary.html">Glossary & Notions</a>
+        <a href="learning_path.html">Learning Path</a>
+      </nav>
+      <div class="meta">Focus: distributions, inference, experiment design</div>
+    </aside>
 
-<div class="sidebar">
-    <small style="letter-spacing: 2px;">MODULE 03</small>
-    <h1 style="color: #c4b5fd;">Statistical Analysis</h1>
-    <p style="opacity: 0.8; font-size: 0.9rem;">From counting numbers to predicting outcomes.</p>
-    <hr style="opacity: 0.1; margin: 2rem 0;">
-    <nav>
-        <p>‚Ä¢ Central Tendency</p>
-        <p>‚Ä¢ Distribution & Variance</p>
-        <p>‚Ä¢ Correlation vs Causation</p>
-        <p>‚Ä¢ Sampling Theory</p>
-    </nav>
-    <br>
-    <a href="index.html" style="color: #a5b4fc; text-decoration: none; font-weight: bold;">‚Üê Return to Roadmap</a>
-</div>
-
-<div class="content">
-    <div class="guru-box">
-        <span class="badge">Core Concept</span>
-        <h2>1. The "Big Three" (Mean, Median, Mode)</h2>
-        <p>A Guru knows that the <strong>Average (Mean)</strong> can be a lie if there are "Outliers."</p>
-        
-        <div class="math-block">
-            Example: 5 people earn $20k, but the Boss earns $500k. <br>
-            Average: $100k (Misleading!)<br>
-            Median: $20k (The Truth)
+    <main class="main">
+      <section class="hero reveal">
+        <div class="badge">Module 03</div>
+        <h1>Make decisions with data, not guesses.</h1>
+        <p>
+          This module teaches how to describe data, quantify uncertainty, and test ideas responsibly.
+          Each concept starts with a baby-friendly story and matures into professional analysis.
+        </p>
+        <div class="pill-group">
+          <div class="pill">Descriptive statistics</div>
+          <div class="pill">Distributions</div>
+          <div class="pill">Inference</div>
+          <div class="pill">Experiment design</div>
         </div>
-        
-        <p><strong>Teaching Tip:</strong> Ask the student to calculate the median of a list of numbers where one number is 100x larger than the rest.</p>
-    </div>
+      </section>
 
-    <div class="guru-box">
-        <span class="badge">Advanced Architecture</span>
-        <h2>2. Standard Deviation & Variance</h2>
-        <p>This measures <strong>Consistency</strong>. In the market, high variance means high risk.</p>
-        
-        <div class="visual-demo">
-            <div class="bar" style="height: 40%;"></div>
-            <div class="bar" style="height: 42%;"></div>
-            <div class="bar" style="height: 39%;"></div>
-            <div class="bar" style="height: 41%;"></div>
-            <p style="font-size: 0.7rem;">Low Variance (Stable)</p>
+      <section class="section reveal">
+        <div class="section-title"><span>1</span>Baby-to-guru ladder</div>
+        <div class="levels">
+          <div class="level">
+            <div class="label">Baby explanation</div>
+            <p>Statistics is like summarizing a big story in a few words.</p>
+          </div>
+          <div class="level">
+            <div class="label">Builder explanation</div>
+            <p>We use averages and spread to describe a dataset quickly.</p>
+          </div>
+          <div class="level">
+            <div class="label">Guru explanation</div>
+            <p>We quantify uncertainty and estimate the risk of a wrong decision.</p>
+          </div>
         </div>
-        <div class="visual-demo">
-            <div class="bar" style="height: 10%;"></div>
-            <div class="bar" style="height: 90%;"></div>
-            <div class="bar" style="height: 20%;"></div>
-            <div class="bar" style="height: 85%;"></div>
-            <p style="font-size: 0.7rem;">High Variance (Volatile)</p>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>2</span>Descriptive statistics</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Mean, median, mode</h3>
+            <p><strong>Baby:</strong> The middle number tells the ìfairî story.</p>
+            <p><strong>Builder:</strong> Median is robust when outliers exist.</p>
+            <div class="code-block">Dataset: 20, 20, 20, 20, 500
+Mean = 116
+Median = 20</div>
+          </div>
+          <div class="card">
+            <h3>Spread matters</h3>
+            <p><strong>Baby:</strong> Are the numbers close or far apart?</p>
+            <p><strong>Builder:</strong> Variance and standard deviation show stability.</p>
+            <p><strong>Guru:</strong> High variance = higher uncertainty and risk.</p>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <div class="guru-box">
-        <span class="badge">The Analyst's Bible</span>
-        <h2>3. Correlation vs. Causation</h2>
-        <p>Just because two things happen together doesn't mean one caused the other.</p>
-        
-        <div class="warning-box">
-            <strong>The Classic Guru Example:</strong> Ice cream sales and Shark attacks both go up in the summer. Does ice cream cause shark attacks? No. The hidden factor (lurking variable) is <strong>Heat</strong>.
+      <section class="section reveal">
+        <div class="section-title"><span>3</span>Distributions & sampling</div>
+        <div class="grid three">
+          <div class="card">
+            <h3>Normal</h3>
+            <p>Continuous measures like height, time, or error terms.</p>
+          </div>
+          <div class="card">
+            <h3>Binomial</h3>
+            <p>Success/failure outcomes like conversion or churn.</p>
+          </div>
+          <div class="card">
+            <h3>Poisson</h3>
+            <p>Event counts per unit time like defects per day.</p>
+          </div>
         </div>
-    </div>
-
-    <div class="guru-box" style="border-top: 6px solid #10b981;">
-        <h2>üöÄ Guru Task: The "Data Audit"</h2>
-        <p>Provide the student with a dataset of "Employee Performance."</p>
-        <ol>
-            <li>Identify the <strong>Outliers</strong> (Employees performing too well or too poorly).</li>
-            <li>Determine if <strong>Years of Experience</strong> has a positive <strong>Correlation</strong> with <strong>Salary</strong>.</li>
-            <li>Predict next month's sales based on a 3-month <strong>Moving Average</strong>.</li>
-        </ol>
-    </div>
-    
-    <div class="guru-box">
-        <h2>4. Probability Distributions</h2>
-        <p>Common distributions: <strong>Normal</strong>, <strong>Binomial</strong>, <strong>Poisson</strong>. Choosing the right model matters for inference and prediction.</p>
-        <div class="math-block">
-            Normal: $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+        <div class="callout" style="margin-top: 16px;">
+          <strong>Instructor prompt:</strong> Ask learners to choose a distribution for ìcalls per hourî and explain why.
         </div>
-        <p><strong>Example:</strong> Heights are approximately Normal; counting daily defects fits a Poisson model.</p>
-    </div>
+      </section>
 
-    <div class="guru-box">
-        <h2>5. Hypothesis Testing & Confidence Intervals</h2>
-        <p>Formulate a null hypothesis, choose an alpha (commonly 0.05), compute a test statistic and p-value, then decide whether to reject the null.</p>
-        <p><strong>Example:</strong> Test whether a new feature increases conversion rate. Use a two-proportion z-test and report a 95% CI for the lift.</p>
-        <div class="warning-box">
-            <strong>Teaching tip:</strong> Emphasize effect size and sample power ‚Äî small p-values are not automatically practically significant.
+      <section class="section reveal">
+        <div class="section-title"><span>4</span>Correlation vs causation</div>
+        <p><strong>Baby:</strong> Two things can happen together without one causing the other.</p>
+        <div class="callout">
+          <strong>Example:</strong> Ice cream sales and shark attacks both rise in summer.
+          The hidden variable is temperature.
         </div>
-    </div>
+        <p><strong>Guru:</strong> Always ask for a mechanism and check for confounding variables.</p>
+      </section>
 
-    <div class="guru-box">
-        <h2>6. Practical Exercises</h2>
-        <ol>
-            <li>Given a CSV of monthly sales, compute moving averages, seasonal decomposition, and forecast with a simple linear model.</li>
-            <li>Simulate 10,000 samples from a Normal distribution and show the sampling distribution of the mean.</li>
-            <li>Perform an A/B test analysis: compute conversion lift, CI, and required sample size for 80% power.</li>
-        </ol>
-    </div>
-    
-    <footer style="margin-top:1.5rem; color:#475569;">
-        <strong>Developer:</strong> WabukoWabuko ‚Äî <a href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a> ¬∑ <a href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a>
-    </footer>
-</div>
+      <section class="section reveal">
+        <div class="section-title"><span>5</span>Hypothesis testing</div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>Purpose</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Define H0 and H1</td>
+              <td>Clarify the claim</td>
+              <td>Formal hypothesis statement</td>
+            </tr>
+            <tr>
+              <td>Choose alpha</td>
+              <td>Set acceptable error rate</td>
+              <td>Commonly 0.05</td>
+            </tr>
+            <tr>
+              <td>Compute p-value</td>
+              <td>Quantify evidence</td>
+              <td>Decision to reject or not</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 12px;">Emphasize effect size and confidence intervals alongside p-values.</p>
+      </section>
 
-<script>
-    // Visual interaction: Animate bars on load
-    window.onload = () => {
-        document.querySelectorAll('.bar').forEach(bar => {
-            const h = bar.style.height;
-            bar.style.height = '0%';
-            setTimeout(() => { bar.style.height = h; }, 500);
-        });
-    }
-</script>
+      <section class="section reveal">
+        <div class="section-title"><span>6</span>Guided labs</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Lab 1: Sampling simulation</h3>
+            <p>Simulate 10,000 samples to visualize the sampling distribution of the mean.</p>
+          </div>
+          <div class="card">
+            <h3>Lab 2: A/B test analysis</h3>
+            <p>Compute conversion lift, confidence interval, and sample size targets.</p>
+          </div>
+          <div class="card">
+            <h3>Lab 3: Forecasting</h3>
+            <p>Use a moving average and linear trend to predict next-month sales.</p>
+          </div>
+          <div class="card">
+            <h3>Lab 4: Data audit</h3>
+            <p>Identify outliers and explain likely causes before removing them.</p>
+          </div>
+        </div>
+      </section>
 
+      <section class="section reveal">
+        <div class="section-title"><span>7</span>Capstone</div>
+        <p>Create a statistical memo for a product change proposal:</p>
+        <ul class="list">
+          <li>Describe the distribution of user behavior</li>
+          <li>Run an A/B test and summarize results</li>
+          <li>Provide confidence intervals and effect sizes</li>
+          <li>Recommend a decision with risk assessment</li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        Developer: WabukoWabuko ó basilwabbs@gmail.com ó wabulo-portfolio.vercel.app
+      </footer>
+    </main>
+  </div>
 </body>
 </html>

@@ -1,59 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Guru Certification | Lab Tasks</title>
-    <style>
-        body { font-family: 'Inter', sans-serif; background: #f1f5f9; padding: 4rem; }
-        .container { max-width: 800px; margin: auto; }
-        .lab-card { background: white; border-radius: 15px; padding: 2.5rem; margin-bottom: 2rem; border: 1px solid #cbd5e1; }
-        .check-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-        input[type="checkbox"] { width: 20px; height: 20px; }
-        .status-badge { float: right; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; background: #fee2e2; color: #991b1b; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Labs & Certification</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <h1>Certification Labs</h1>
-    <p>Complete these tasks live with your tutor to earn your "Guru" status.</p>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Labs & Certification</div>
+      <div class="tagline">Practice, validate, and certify</div>
+      <nav class="nav">
+        <a href="index.html">Overview Roadmap</a>
+        <a href="basics.html">Module 01: Computer Architecture</a>
+        <a href="excel_guru.html">Module 02: Excel & Data Mastery</a>
+        <a href="analysis.html">Module 03: Statistical Analysis</a>
+        <a href="python.html">Module 04: Python Engineering</a>
+        <a class="active" href="tasks.html">Labs & Certification</a>
+        <a href="glossary.html">Glossary & Notions</a>
+        <a href="learning_path.html">Learning Path</a>
+      </nav>
+      <div class="meta">Use these labs to evaluate real-world readiness.</div>
+    </aside>
 
-    <div class="lab-card">
-        <span class="status-badge">Locked</span>
-        <h3>Lab 01: System Architect</h3>
-        <div class="check-item"><input type="checkbox"> Explain the difference between RAM and SSD using a real-world analogy.</div>
-        <div class="check-item"><input type="checkbox"> Use the CLI to create a folder structure for a "2024_Tax_Project".</div>
-        <div class="check-item"><input type="checkbox"> Explain how a website travels from a server to your browser.</div>
-    </div>
+    <main class="main">
+      <section class="hero reveal">
+        <div class="badge">Certification Track</div>
+        <h1>Lab-based assessment for every module.</h1>
+        <p>
+          Each lab is designed to be completed live with a tutor or independently with a rubric.
+          The outcome is a portfolio of evidence and a clear record of competency.
+        </p>
+        <div class="pill-group">
+          <div class="pill">Hands-on evaluation</div>
+          <div class="pill">Realistic constraints</div>
+          <div class="pill">Communication focus</div>
+        </div>
+      </section>
 
-    <div class="lab-card">
-        <span class="status-badge">Locked</span>
-        <h3>Lab 02: Excel Engineering</h3>
-        <div class="check-item"><input type="checkbox"> Link two different Workbooks using Dynamic Power Query.</div>
-        <div class="check-item"><input type="checkbox"> Build an INDEX/MATCH formula that handles "Data Not Found" errors gracefully.</div>
-        <div class="check-item"><input type="checkbox"> Use a Pivot Table to find the "Top 5 Salespeople" in a dataset of 5,000 rows.</div>
-    </div>
-</div>
+      <section class="section reveal">
+        <div class="section-title"><span>1</span>Module 01 labs</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Lab 01: System architect</h3>
+            <ul class="list">
+              <li>Explain RAM vs SSD using a simple analogy.</li>
+              <li>Create a project folder structure with the CLI.</li>
+              <li>Trace a web request from DNS to HTTP response.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Lab 02: Troubleshooting sprint</h3>
+            <ul class="list">
+              <li>Identify top resource processes.</li>
+              <li>Explain swap usage and its impact.</li>
+              <li>Provide remediation steps.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-<section style="max-width:800px; margin: 2rem auto;">
-    <h2>Lab Guidance & Rubric</h2>
-    <p>Each lab is scored on:</p>
-    <ul>
-        <li><strong>Correctness</strong> (50%) — Does the solution meet the specification?</li>
-        <li><strong>Robustness</strong> (25%) — Handles edge cases and bad input.</li>
-        <li><strong>Explanation</strong> (25%) — Clear notes that explain reasoning and steps.</li>
-    </ul>
+      <section class="section reveal">
+        <div class="section-title"><span>2</span>Module 02 labs</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Lab 03: Excel engineering</h3>
+            <ul class="list">
+              <li>Build an INDEX/MATCH with error handling.</li>
+              <li>Create a dynamic array for filtering and sorting.</li>
+              <li>Document assumptions and data issues.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Lab 04: Dashboard build</h3>
+            <ul class="list">
+              <li>Automate refresh using Power Query.</li>
+              <li>Use slicers to drive multiple visuals.</li>
+              <li>Deliver executive summary metrics.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-    <h3>Hints & Solutions (Instructor Use)</h3>
-    <ol>
-        <li>Lab 01 hint: Use an analogy: RAM = desk surface, SSD = filing cabinet.</li>
-        <li>Lab 02 hint: Power Query steps should be recorded and named for reproducibility.</li>
-    </ol>
-</section>
+      <section class="section reveal">
+        <div class="section-title"><span>3</span>Module 03 labs</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Lab 05: Statistical audit</h3>
+            <ul class="list">
+              <li>Detect outliers and explain them.</li>
+              <li>Compute distribution summaries.</li>
+              <li>Provide a recommendation memo.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Lab 06: Experiment review</h3>
+            <ul class="list">
+              <li>Run a two-sample test.</li>
+              <li>Report effect size and confidence interval.</li>
+              <li>Discuss power and limitations.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-<footer style="max-width:800px; margin: 1rem auto; color:#475569;">
-    <strong>Developer:</strong> WabukoWabuko — <a href="mailto:basilwabbs@gmail.com">basilwabbs@gmail.com</a> · <a href="https://wabulo-portfolio.vercel.app">wabulo-portfolio.vercel.app</a>
-    <div style="margin-top:0.5rem; font-size:0.9rem;">Return: <a href="index.html" style="color:#2563eb; font-weight:bold; text-decoration:none;">← Main Hub</a></div>
-</footer>
-</div>
+      <section class="section reveal">
+        <div class="section-title"><span>4</span>Module 04 labs</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Lab 07: Automation script</h3>
+            <ul class="list">
+              <li>Process multiple CSV files.</li>
+              <li>Generate a consolidated report.</li>
+              <li>Log errors and missing fields.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Lab 08: Production readiness</h3>
+            <ul class="list">
+              <li>Add unit tests for a pipeline.</li>
+              <li>Package the tool with a CLI command.</li>
+              <li>Write a short README usage guide.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>5</span>Rubric</div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Weight</th>
+              <th>What to look for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Correctness</td>
+              <td>50%</td>
+              <td>Meets the specification and requirements</td>
+            </tr>
+            <tr>
+              <td>Robustness</td>
+              <td>25%</td>
+              <td>Handles edge cases and unexpected input</td>
+            </tr>
+            <tr>
+              <td>Communication</td>
+              <td>25%</td>
+              <td>Clear explanation, notes, and rationale</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>6</span>Instructor notes</div>
+        <div class="callout">
+          <strong>Tips:</strong> Prioritize thinking and explanation over perfect syntax. Ask learners to narrate
+          their reasoning, state assumptions, and reflect on trade-offs.
+        </div>
+      </section>
+
+      <footer class="footer">
+        Developer: WabukoWabuko � basilwabbs@gmail.com � wabulo-portfolio.vercel.app
+      </footer>
+    </main>
+  </div>
 </body>
 </html>

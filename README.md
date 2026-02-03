@@ -1,14 +1,17 @@
 # ComputerBasicsDataAnalysisPythonBasics
 
-Curated curriculum and reference for teaching foundational computing, data analysis, Excel engineering, and Python tooling.
+A comprehensive, instructor-ready tutorial website that teaches computer fundamentals, Excel engineering, statistics, and Python automation from baby-friendly explanations to professional mastery.
 
 Contents:
-- `index.html` â€” Roadmap and quick start
-- `basics.html` â€” Module 01: Computer Architecture & Systems
-- `excel_guru.html` â€” Module 02: Excel & Data Modeling
-- `analysis.html` â€” Module 03: Statistical Analysis
-- `python.html` â€” Module 04: Python Engineering
-- `tasks.html` â€” Labs and certification tasks
+- `index.html` — Roadmap and quick start
+- `basics.html` — Module 01: Computer Architecture & Systems
+- `excel_guru.html` — Module 02: Excel & Data Mastery
+- `analysis.html` — Module 03: Statistical Analysis
+- `python.html` — Module 04: Python Engineering
+- `tasks.html` — Labs and certification tasks
+- `glossary.html` — Plain-English glossary and mild notions
+- `learning_path.html` — Teaching roadmap and pacing
+- `styles.css` — Shared site styling
 
 Quick start:
 
@@ -26,5 +29,4 @@ Contributing:
 
 Developer:
 
-WabukoWabuko â€” basilwabbs@gmail.com â€” https://wabulo-portfolio.vercel.app
-
+WabukoWabuko — basilwabbs@gmail.com — wabulo-portfolio.vercel.app
