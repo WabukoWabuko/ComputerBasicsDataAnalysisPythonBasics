@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
-
 :root {
   --ink: #0f172a;
   --muted: #475569;
@@ -355,6 +353,40 @@ img {
   margin-top: 10px;
 }
 
+.developer {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(30, 64, 175, 0.85));
+  color: #e2e8f0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  align-items: center;
+  font-size: 0.95rem;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
+}
+
+.developer strong {
+  color: #f8fafc;
+}
+
+.developer a {
+  color: #bae6fd;
+  font-weight: 600;
+}
+
+.developer a:hover {
+  color: #38bdf8;
+}
+
+.developer .pill {
+  background: rgba(148, 163, 184, 0.16);
+  color: #e2e8f0;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -439,6 +471,11 @@ img {
 
   .section-title {
     font-size: 1.15rem;
+  }
+
+  .developer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
