@@ -11,6 +11,9 @@ Contents:
 - `tasks.html` — Labs and certification tasks
 - `glossary.html` — Plain-English glossary and mild notions
 - `learning_path.html` — Teaching roadmap and pacing
+- `syllabus.html` — Full course syllabus
+- `projects.html` — Real-world projects and capstones
+- `resources.html` — Tools, datasets, and practice guidance
 - `styles.css` — Shared site styling
 
 Quick start:

@@ -240,6 +240,14 @@ img {
   color: #b45309;
 }
 
+.note {
+  border-left: 6px solid var(--accent-2);
+  background: #eff6ff;
+  border-radius: 14px;
+  padding: 16px;
+  color: #1e3a8a;
+}
+
 .levels {
   display: grid;
   gap: 16px;

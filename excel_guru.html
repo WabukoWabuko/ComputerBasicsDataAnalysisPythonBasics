@@ -20,6 +20,9 @@
         <a href="tasks.html">Labs & Certification</a>
         <a href="glossary.html">Glossary & Notions</a>
         <a href="learning_path.html">Learning Path</a>
+        <a href="syllabus.html">Full Syllabus</a>
+        <a href="projects.html">Projects & Real-World</a>
+        <a href="resources.html">Tools & Resources</a>
       </nav>
       <div class="meta">Focus: Power Query, dynamic arrays, dashboards</div>
     </aside>
@@ -29,8 +32,8 @@
         <div class="badge">Module 02</div>
         <h1>Build spreadsheets that think, update, and explain themselves.</h1>
         <p>
-          Start with simple tables, then learn how to clean data, create fast lookups, and build dashboards
-          that update with one click. Every step includes baby-friendly explanations and pro-level output.
+          We start with clean tables and simple formulas, then move into modern Excel features
+          like Power Query, data modeling, and dashboards with professional standards.
         </p>
         <div class="pill-group">
           <div class="pill">XLOOKUP and INDEX/MATCH</div>
@@ -45,21 +48,47 @@
         <div class="levels">
           <div class="level">
             <div class="label">Baby explanation</div>
-            <p>A spreadsheet is like a big grid notebook. Each box can hold a number or a word.</p>
+            <p>A spreadsheet is a big grid notebook. Each box holds a number or a word.</p>
           </div>
           <div class="level">
             <div class="label">Builder explanation</div>
-            <p>Tables organize data into columns with names. Formulas reference those columns by name.</p>
+            <p>Tables organize data into columns with names. Formulas use those names safely.</p>
           </div>
           <div class="level">
             <div class="label">Guru explanation</div>
-            <p>Model data with clean tables, use relationships, and design a dashboard that refreshes automatically.</p>
+            <p>We build refreshable pipelines, modeling relationships and presenting decisions.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>2</span>Lookup architecture</div>
+        <div class="section-title"><span>2</span>Fundamentals (small to large)</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Cells, rows, columns</h3>
+            <p><strong>Baby:</strong> Each box is a home for one value.</p>
+            <p><strong>Builder:</strong> Use headers to name columns clearly.</p>
+          </div>
+          <div class="card">
+            <h3>Tables</h3>
+            <p><strong>Baby:</strong> A tidy list with labels.</p>
+            <p><strong>Builder:</strong> Structured references make formulas easier to read.</p>
+          </div>
+          <div class="card">
+            <h3>Formulas</h3>
+            <p><strong>Baby:</strong> A calculator in a cell.</p>
+            <p><strong>Builder:</strong> SUM, AVERAGE, IF, and logical tests.</p>
+          </div>
+          <div class="card">
+            <h3>Charts</h3>
+            <p><strong>Baby:</strong> A picture of the numbers.</p>
+            <p><strong>Builder:</strong> Use line for trends, bar for comparisons.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>3</span>Lookup architecture</div>
         <div class="grid two">
           <div class="card">
             <h3>Modern lookup approach</h3>
@@ -78,7 +107,7 @@
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>3</span>Power Query ETL</div>
+        <div class="section-title"><span>4</span>Power Query ETL</div>
         <div class="grid three">
           <div class="card">
             <h3>Extract</h3>
@@ -111,8 +140,8 @@
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>4</span>Dynamic arrays</div>
-        <p><strong>Baby:</strong> The formula spills the answer into many boxes.</p>
+        <div class="section-title"><span>5</span>Dynamic arrays</div>
+        <p><strong>Baby:</strong> One formula fills many boxes.</p>
         <p><strong>Builder:</strong> Use FILTER and SORT to automatically update results.</p>
         <div class="code-block">=SORT(FILTER(Sales[Amount], Sales[Region]=F2), 1, -1)</div>
         <div class="grid two" style="margin-top: 16px;">
@@ -128,11 +157,35 @@
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>5</span>Dashboard engineering</div>
+        <div class="section-title"><span>6</span>Data modeling</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Relationships</h3>
+            <p>Link fact tables to dimension tables for clean analytics.</p>
+            <ul class="list">
+              <li>Sales fact table</li>
+              <li>Customer dimension</li>
+              <li>Date dimension</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Measures and KPIs</h3>
+            <p>Define metrics consistently before building visuals.</p>
+            <ul class="list">
+              <li>Total revenue</li>
+              <li>Gross margin</li>
+              <li>Conversion rate</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>7</span>Dashboard engineering</div>
         <div class="grid two">
           <div class="card">
             <h3>Visual hierarchy</h3>
-            <p>Show KPIs first, then supporting trends, then tables for detail.</p>
+            <p>Show KPIs first, then trends, then detail tables.</p>
             <ul class="list">
               <li>Top row: KPIs and variance</li>
               <li>Middle: trend and breakdown charts</li>
@@ -149,13 +202,62 @@
             </ul>
           </div>
         </div>
-        <div class="callout" style="margin-top: 16px;">
-          <strong>Guru task:</strong> Build a KPI dashboard that updates in one click and includes a data quality log.
+        <div class="note" style="margin-top: 16px;">
+          <strong>Real-world connection:</strong> A manager should answer “What is happening and why?” in 30 seconds.
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>6</span>Capstone project</div>
+        <div class="section-title"><span>8</span>Less common but useful</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Power Pivot</h3>
+            <p>Model complex relationships and use DAX for advanced measures.</p>
+          </div>
+          <div class="card">
+            <h3>Office Scripts</h3>
+            <p>Automate Excel tasks with scripts when formulas are not enough.</p>
+          </div>
+          <div class="card">
+            <h3>Data validation rules</h3>
+            <p>Prevent bad data at the source with dropdowns and constraints.</p>
+          </div>
+          <div class="card">
+            <h3>Named ranges</h3>
+            <p>Make formulas readable and reduce mistakes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>9</span>Misconceptions to correct</div>
+        <ul class="list">
+          <li>“VLOOKUP is best.” It is fragile; XLOOKUP is safer.</li>
+          <li>“Manual cleaning is fine.” It breaks with new data.</li>
+          <li>“Charts are decoration.” They are decision tools.</li>
+        </ul>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>10</span>Guided labs</div>
+        <div class="grid three">
+          <div class="card">
+            <h3>Lab 1: Clean data</h3>
+            <p>Fix inconsistent dates and remove duplicates.</p>
+          </div>
+          <div class="card">
+            <h3>Lab 2: Lookup engine</h3>
+            <p>Build a dashboard that pulls data from multiple tables.</p>
+          </div>
+          <div class="card">
+            <h3>Lab 3: KPI dashboard</h3>
+            <p>Create a refreshable executive summary view.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>11</span>Capstone project</div>
         <p>Deliver a production-ready financial dashboard that includes:</p>
         <ul class="list">
           <li>Power Query pipeline with refreshable sources</li>

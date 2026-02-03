@@ -20,6 +20,9 @@
         <a href="tasks.html">Labs & Certification</a>
         <a href="glossary.html">Glossary & Notions</a>
         <a href="learning_path.html">Learning Path</a>
+        <a href="syllabus.html">Full Syllabus</a>
+        <a href="projects.html">Projects & Real-World</a>
+        <a href="resources.html">Tools & Resources</a>
       </nav>
       <div class="meta">Focus: automation, pipelines, packaging, testing</div>
     </aside>
@@ -30,7 +33,7 @@
         <h1>Automate workflows and ship reliable data tools.</h1>
         <p>
           Python turns manual tasks into repeatable systems. We begin with baby-friendly stories about
-          instructions, then move to real pipelines, testing, and deployment.
+          instructions, then move to pipelines, testing, and deployment practices.
         </p>
         <div class="pill-group">
           <div class="pill">Core syntax</div>
@@ -49,7 +52,7 @@
           </div>
           <div class="level">
             <div class="label">Builder explanation</div>
-            <p>Variables hold values, loops repeat tasks, and functions group steps.</p>
+            <p>Variables hold values, loops repeat tasks, functions group steps.</p>
           </div>
           <div class="level">
             <div class="label">Guru explanation</div>
@@ -86,7 +89,33 @@ for project in user["projects"]:
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>3</span>Data pipeline example</div>
+        <div class="section-title"><span>3</span>Core concepts (small to large)</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Functions</h3>
+            <p><strong>Baby:</strong> A recipe you can reuse.</p>
+            <p><strong>Builder:</strong> Break code into clear, testable blocks.</p>
+          </div>
+          <div class="card">
+            <h3>Modules and packages</h3>
+            <p><strong>Baby:</strong> A toolbox of recipes.</p>
+            <p><strong>Builder:</strong> Import code from modules and manage dependencies.</p>
+          </div>
+          <div class="card">
+            <h3>Files and IO</h3>
+            <p><strong>Baby:</strong> Reading and writing notes.</p>
+            <p><strong>Builder:</strong> CSV parsing and file validation.</p>
+          </div>
+          <div class="card">
+            <h3>Error handling</h3>
+            <p><strong>Baby:</strong> What to do if the recipe fails.</p>
+            <p><strong>Builder:</strong> Use try/except to handle bad input safely.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>4</span>Data pipeline example</div>
         <div class="code-block">from pathlib import Path
 import pandas as pd
 
@@ -101,7 +130,7 @@ summary.to_csv("master_report.csv", index=False)
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>4</span>Automation projects</div>
+        <div class="section-title"><span>5</span>Automation projects</div>
         <div class="grid three">
           <div class="card">
             <h3>Batch reporting</h3>
@@ -119,7 +148,7 @@ summary.to_csv("master_report.csv", index=False)
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>5</span>Environment setup</div>
+        <div class="section-title"><span>6</span>Environment setup</div>
         <div class="code-block">python -m venv .venv
 .venv\Scripts\activate
 pip install pandas numpy jupyter pytest
@@ -128,21 +157,82 @@ pip install pandas numpy jupyter pytest
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>6</span>Testing and quality</div>
+        <div class="section-title"><span>7</span>Advanced topics (for mastery)</div>
         <div class="grid two">
           <div class="card">
-            <h3>Unit tests</h3>
-            <p>Validate transformations, schema, and edge cases.</p>
+            <h3>Performance</h3>
+            <p>Vectorize operations, avoid Python loops when possible.</p>
           </div>
           <div class="card">
-            <h3>Logging and errors</h3>
-            <p>Add logging to track runtime events and data anomalies.</p>
+            <h3>Logging</h3>
+            <p>Track runtime events and errors for debugging and audits.</p>
+          </div>
+          <div class="card">
+            <h3>Testing</h3>
+            <p>Write unit tests for transformations and data validation.</p>
+          </div>
+          <div class="card">
+            <h3>Packaging</h3>
+            <p>Turn scripts into reusable tools with a CLI entry point.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>7</span>Capstone</div>
+        <div class="section-title"><span>8</span>Less common but useful</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Async IO</h3>
+            <p>Handle many network calls efficiently.</p>
+          </div>
+          <div class="card">
+            <h3>Type hints</h3>
+            <p>Improve readability and reduce bugs.</p>
+          </div>
+          <div class="card">
+            <h3>Context managers</h3>
+            <p>Safely open/close files and connections.</p>
+          </div>
+          <div class="card">
+            <h3>Dataclasses</h3>
+            <p>Cleanly model data objects.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>9</span>Misconceptions to correct</div>
+        <ul class="list">
+          <li>“Python is slow.” Proper libraries and vectorization are fast.</li>
+          <li>“Scripts don’t need tests.” Tests prevent silent data errors.</li>
+          <li>“Copy-paste is fine.” Reuse functions to reduce mistakes.</li>
+        </ul>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>10</span>Guided labs</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Lab 1: CSV merger</h3>
+            <p>Combine multiple files into one clean dataset.</p>
+          </div>
+          <div class="card">
+            <h3>Lab 2: Data validation</h3>
+            <p>Detect missing fields and log errors.</p>
+          </div>
+          <div class="card">
+            <h3>Lab 3: Automation workflow</h3>
+            <p>Create a script that runs daily and emails a report.</p>
+          </div>
+          <div class="card">
+            <h3>Lab 4: Testing suite</h3>
+            <p>Write tests for key transformations.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>11</span>Capstone</div>
         <p>Deliver a Python automation toolkit that includes:</p>
         <ul class="list">
           <li>Config-driven data ingestion</li>
