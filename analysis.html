@@ -24,22 +24,22 @@
         <a href="projects.html">Projects & Real-World</a>
         <a href="resources.html">Tools & Resources</a>
       </nav>
-      <div class="meta">Focus: distributions, inference, experiment design</div>
+      <div class="meta">Focus: distributions, inference, experiments, decisions</div>
     </aside>
 
     <main class="main">
       <section class="hero reveal">
         <div class="badge">Module 03</div>
-        <h1>Make decisions with data, not guesses.</h1>
+        <h1>Statistics from baby intuition to professional decision-making.</h1>
         <p>
-          This module moves from simple summaries to deep statistical reasoning.
-          Students learn how to describe data, quantify uncertainty, and make defensible decisions.
+          This is the full statistical toolkit: describe data, model uncertainty, test ideas,
+          and make decisions with quantified risk. Every concept includes a real-world link.
         </p>
         <div class="pill-group">
-          <div class="pill">Descriptive statistics</div>
-          <div class="pill">Distributions</div>
-          <div class="pill">Inference</div>
-          <div class="pill">Experiment design</div>
+          <div class="pill">Smallest ? largest concepts</div>
+          <div class="pill">Real-world applications</div>
+          <div class="pill">Inference and experiments</div>
+          <div class="pill">Decision-making</div>
         </div>
       </section>
 
@@ -62,7 +62,37 @@
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>2</span>Descriptive statistics</div>
+        <div class="section-title"><span>2</span>Foundations (smallest ? largest)</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Data types</h3>
+            <p><strong>Baby:</strong> Numbers vs words.</p>
+            <p><strong>Builder:</strong> Categorical vs numerical, discrete vs continuous.</p>
+            <p><strong>Real-world:</strong> Survey responses need categorical analysis.</p>
+          </div>
+          <div class="card">
+            <h3>Population vs sample</h3>
+            <p><strong>Baby:</strong> A scoop of soup tells you about the whole pot.</p>
+            <p><strong>Builder:</strong> Samples estimate population properties.</p>
+            <p><strong>Real-world:</strong> Polls never ask everyone.</p>
+          </div>
+          <div class="card">
+            <h3>Bias</h3>
+            <p><strong>Baby:</strong> A crooked ruler gives wrong measurements.</p>
+            <p><strong>Builder:</strong> Selection bias, measurement bias.</p>
+            <p><strong>Real-world:</strong> Customer feedback skews negative if only angry users respond.</p>
+          </div>
+          <div class="card">
+            <h3>Outliers</h3>
+            <p><strong>Baby:</strong> One giant number can fool the average.</p>
+            <p><strong>Builder:</strong> Use median or trimmed mean.</p>
+            <p><strong>Real-world:</strong> One huge sale can distort daily revenue trends.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>3</span>Descriptive statistics</div>
         <div class="grid two">
           <div class="card">
             <h3>Mean, median, mode</h3>
@@ -73,16 +103,24 @@ Mean = 116
 Median = 20</div>
           </div>
           <div class="card">
-            <h3>Spread matters</h3>
+            <h3>Spread</h3>
             <p><strong>Baby:</strong> Are the numbers close or far apart?</p>
-            <p><strong>Builder:</strong> Variance and standard deviation show stability.</p>
-            <p><strong>Guru:</strong> High variance = higher uncertainty and risk.</p>
+            <p><strong>Builder:</strong> Variance and standard deviation measure spread.</p>
+            <p><strong>Real-world:</strong> Volatile sales imply risk.</p>
+          </div>
+          <div class="card">
+            <h3>Shape</h3>
+            <p>Skewness and kurtosis explain tails and asymmetry.</p>
+          </div>
+          <div class="card">
+            <h3>Percentiles</h3>
+            <p>Median is the 50th percentile; quartiles split data into quarters.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>3</span>Distributions & sampling</div>
+        <div class="section-title"><span>4</span>Distributions & probability</div>
         <div class="grid three">
           <div class="card">
             <h3>Normal</h3>
@@ -96,6 +134,18 @@ Median = 20</div>
             <h3>Poisson</h3>
             <p>Event counts per unit time like defects per day.</p>
           </div>
+          <div class="card">
+            <h3>Uniform</h3>
+            <p>All outcomes are equally likely (random sampling).</p>
+          </div>
+          <div class="card">
+            <h3>Exponential</h3>
+            <p>Time between events (e.g., failures).</p>
+          </div>
+          <div class="card">
+            <h3>Law of large numbers</h3>
+            <p>Averages stabilize as sample size grows.</p>
+          </div>
         </div>
         <div class="callout" style="margin-top: 16px;">
           <strong>Instructor prompt:</strong> Ask learners to choose a distribution for “calls per hour” and explain why.
@@ -103,17 +153,39 @@ Median = 20</div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>4</span>Correlation vs causation</div>
+        <div class="section-title"><span>5</span>Sampling & estimation</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Sampling error</h3>
+            <p>Small samples are noisy; bigger samples reduce uncertainty.</p>
+          </div>
+          <div class="card">
+            <h3>Confidence intervals</h3>
+            <p>Report a range of plausible values instead of a single number.</p>
+          </div>
+          <div class="card">
+            <h3>Standard error</h3>
+            <p>How much a sample statistic varies across samples.</p>
+          </div>
+          <div class="card">
+            <h3>Central limit theorem</h3>
+            <p>Sample means tend toward normal even if data is not.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>6</span>Correlation vs causation</div>
         <p><strong>Baby:</strong> Two things can happen together without one causing the other.</p>
         <div class="callout">
           <strong>Example:</strong> Ice cream sales and shark attacks both rise in summer.
           The hidden variable is temperature.
         </div>
-        <p><strong>Guru:</strong> Always ask for a mechanism and check for confounding variables.</p>
+        <p><strong>Guru:</strong> Always ask for a mechanism and check for confounders.</p>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>5</span>Inference and hypothesis testing</div>
+        <div class="section-title"><span>7</span>Hypothesis testing</div>
         <table class="table">
           <thead>
             <tr>
@@ -140,55 +212,102 @@ Median = 20</div>
             </tr>
           </tbody>
         </table>
-        <p style="margin-top: 12px;">Emphasize effect size and confidence intervals alongside p-values.</p>
+        <p style="margin-top: 12px;">Always report effect size and confidence intervals alongside p-values.</p>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>6</span>Advanced concepts (for full mastery)</div>
+        <div class="section-title"><span>8</span>Experiment design</div>
         <div class="grid two">
           <div class="card">
-            <h3>Bias and variance</h3>
-            <p>Understand when models underfit or overfit.</p>
+            <h3>A/B tests</h3>
+            <p>Randomly split groups and compare outcomes.</p>
+          </div>
+          <div class="card">
+            <h3>Randomization</h3>
+            <p>Protects against hidden bias.</p>
           </div>
           <div class="card">
             <h3>Power analysis</h3>
-            <p>Estimate how many samples are needed for reliable tests.</p>
-          </div>
-          <div class="card">
-            <h3>Confidence intervals</h3>
-            <p>Communicate the range of plausible outcomes, not just a point estimate.</p>
+            <p>Estimate sample size needed to detect an effect.</p>
           </div>
           <div class="card">
             <h3>Multiple testing</h3>
-            <p>Adjust for false positives when running many experiments.</p>
+            <p>Correct for false positives when running many experiments.</p>
+          </div>
+        </div>
+        <div class="note" style="margin-top: 16px;">
+          <strong>Real-world connection:</strong> Businesses often waste money on underpowered experiments.
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>9</span>Regression & modeling</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Linear regression</h3>
+            <p>Model the relationship between inputs and outcomes.</p>
+          </div>
+          <div class="card">
+            <h3>Overfitting vs underfitting</h3>
+            <p>Balance model complexity and generalization.</p>
+          </div>
+          <div class="card">
+            <h3>Residuals</h3>
+            <p>Check if the model systematically misses patterns.</p>
+          </div>
+          <div class="card">
+            <h3>Feature scaling</h3>
+            <p>Normalize inputs for stable models.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>7</span>Less common but useful</div>
+        <div class="section-title"><span>10</span>Time series & forecasting</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Trend & seasonality</h3>
+            <p>Patterns over time (weekly, monthly, yearly).</p>
+          </div>
+          <div class="card">
+            <h3>Moving averages</h3>
+            <p>Simple smoothing for noisy data.</p>
+          </div>
+          <div class="card">
+            <h3>Forecast accuracy</h3>
+            <p>Measure error with MAE or RMSE.</p>
+          </div>
+          <div class="card">
+            <h3>Stationarity</h3>
+            <p>Some models assume a stable mean and variance.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>11</span>Advanced & less common concepts</div>
         <div class="grid two">
           <div class="card">
             <h3>Bayesian thinking</h3>
-            <p>Update beliefs with new data; useful in iterative decision-making.</p>
+            <p>Update beliefs with new evidence.</p>
           </div>
           <div class="card">
             <h3>Non-parametric tests</h3>
-            <p>Use when assumptions like normality fail.</p>
+            <p>Use when normality assumptions fail.</p>
           </div>
           <div class="card">
-            <h3>Seasonality</h3>
-            <p>Recognize repeating patterns in time-series data.</p>
+            <h3>Survivorship bias</h3>
+            <p>Ignoring failures creates wrong conclusions.</p>
           </div>
           <div class="card">
             <h3>Data leakage</h3>
-            <p>Avoid using information that would not be available in real-world prediction.</p>
+            <p>Accidentally using information not available in real use.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>8</span>Real-world applications</div>
+        <div class="section-title"><span>12</span>Real-world applications</div>
         <div class="grid three">
           <div class="card">
             <h3>Marketing experiments</h3>
@@ -206,16 +325,17 @@ Median = 20</div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>9</span>Misconceptions to correct</div>
+        <div class="section-title"><span>13</span>Misconceptions to correct</div>
         <ul class="list">
-          <li>“A small p-value means the effect is big.” It only means evidence is strong.</li>
+          <li>“A small p-value means a big effect.” It only means strong evidence.</li>
           <li>“Correlation proves cause.” It does not.</li>
           <li>“Average tells the full story.” Spread and shape matter.</li>
+          <li>“One test is enough.” Multiple tests require correction.</li>
         </ul>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>10</span>Guided labs</div>
+        <div class="section-title"><span>14</span>Guided labs</div>
         <div class="grid two">
           <div class="card">
             <h3>Lab 1: Sampling simulation</h3>
@@ -237,7 +357,7 @@ Median = 20</div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>11</span>Capstone</div>
+        <div class="section-title"><span>15</span>Capstone</div>
         <p>Create a statistical memo for a product change proposal:</p>
         <ul class="list">
           <li>Describe the distribution of user behavior</li>
@@ -254,4 +374,3 @@ Median = 20</div>
   </div>
 </body>
 </html>
-
