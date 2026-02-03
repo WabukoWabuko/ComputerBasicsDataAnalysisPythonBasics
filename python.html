@@ -30,16 +30,17 @@
     <main class="main">
       <section class="hero reveal">
         <div class="badge">Module 04</div>
-        <h1>Automate workflows and ship reliable data tools.</h1>
+        <h1>Python from baby instructions to production-ready tools.</h1>
         <p>
-          Python turns manual tasks into repeatable systems. We begin with baby-friendly stories about
-          instructions, then move to pipelines, testing, and deployment practices.
+          This module covers every essential concept: basic syntax, data structures, file IO,
+          automation, data pipelines, testing, packaging, and deployment practices—always tied
+          to real-world outcomes.
         </p>
         <div class="pill-group">
-          <div class="pill">Core syntax</div>
-          <div class="pill">Pandas pipelines</div>
-          <div class="pill">Automation</div>
-          <div class="pill">Testing and packaging</div>
+          <div class="pill">Smallest ? largest concepts</div>
+          <div class="pill">Real-world applications</div>
+          <div class="pill">Automation & data pipelines</div>
+          <div class="pill">Testing & reliability</div>
         </div>
       </section>
 
@@ -52,70 +53,141 @@
           </div>
           <div class="level">
             <div class="label">Builder explanation</div>
-            <p>Variables hold values, loops repeat tasks, functions group steps.</p>
+            <p>Variables store values, loops repeat tasks, functions group steps.</p>
           </div>
           <div class="level">
             <div class="label">Guru explanation</div>
-            <p>We build pipelines with validation, logging, tests, and deployment checks.</p>
+            <p>We build reliable pipelines with validation, logging, tests, and deployment checks.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>2</span>Foundations</div>
+        <div class="section-title"><span>2</span>Foundations (smallest ? largest)</div>
         <div class="grid two">
           <div class="card">
-            <h3>Data structures</h3>
-            <p><strong>Baby:</strong> A list is a basket of items.</p>
-            <p><strong>Builder:</strong> Dictionaries store key-value pairs.</p>
-            <div class="code-block">user = {
+            <h3>Variables and types</h3>
+            <p><strong>Baby:</strong> A labeled box.</p>
+            <p><strong>Builder:</strong> int, float, str, bool.</p>
+            <p><strong>Real-world:</strong> Wrong types cause errors in reports.</p>
+          </div>
+          <div class="card">
+            <h3>Operators</h3>
+            <p>Math, comparison, and logical operators for decision rules.</p>
+          </div>
+          <div class="card">
+            <h3>Strings</h3>
+            <p>Text manipulation for names, IDs, file paths.</p>
+          </div>
+          <div class="card">
+            <h3>Input/output</h3>
+            <p>Read input, print output, format clean results.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>3</span>Control flow</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Conditionals</h3>
+            <p>if/elif/else for decisions.</p>
+          </div>
+          <div class="card">
+            <h3>Loops</h3>
+            <p>for and while loops to repeat work.</p>
+          </div>
+          <div class="card">
+            <h3>Comprehensions</h3>
+            <p>Clean one-line transformations.</p>
+          </div>
+          <div class="card">
+            <h3>Breaking and continuing</h3>
+            <p>Control loop behavior for efficiency.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>4</span>Core data structures</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Lists</h3>
+            <p><strong>Baby:</strong> A basket of items.</p>
+            <p><strong>Builder:</strong> Ordered, mutable sequences.</p>
+          </div>
+          <div class="card">
+            <h3>Dictionaries</h3>
+            <p><strong>Baby:</strong> A phonebook of names and numbers.</p>
+            <p><strong>Builder:</strong> Key-value mapping for fast lookup.</p>
+          </div>
+          <div class="card">
+            <h3>Sets</h3>
+            <p>Unique items, helpful for de-duplication.</p>
+          </div>
+          <div class="card">
+            <h3>Tuples</h3>
+            <p>Immutable collections for fixed records.</p>
+          </div>
+        </div>
+        <div class="code-block">user = {
   "name": "Alex",
   "role": "Analyst",
   "projects": ["Sales", "Growth"]
 }
 for project in user["projects"]:
   print(f"Reviewing {project}")</div>
-          </div>
-          <div class="card">
-            <h3>Control flow</h3>
-            <p>Teach loops and conditionals through realistic tasks.</p>
-            <ul class="list">
-              <li>Validate data entries</li>
-              <li>Branch on missing values</li>
-              <li>Summarize with grouped metrics</li>
-            </ul>
-          </div>
-        </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>3</span>Core concepts (small to large)</div>
+        <div class="section-title"><span>5</span>Functions and modularity</div>
         <div class="grid two">
           <div class="card">
             <h3>Functions</h3>
-            <p><strong>Baby:</strong> A recipe you can reuse.</p>
-            <p><strong>Builder:</strong> Break code into clear, testable blocks.</p>
+            <p>Reusable blocks of logic with inputs and outputs.</p>
           </div>
           <div class="card">
-            <h3>Modules and packages</h3>
-            <p><strong>Baby:</strong> A toolbox of recipes.</p>
-            <p><strong>Builder:</strong> Import code from modules and manage dependencies.</p>
+            <h3>Modules & packages</h3>
+            <p>Organize code into reusable libraries.</p>
           </div>
           <div class="card">
-            <h3>Files and IO</h3>
-            <p><strong>Baby:</strong> Reading and writing notes.</p>
-            <p><strong>Builder:</strong> CSV parsing and file validation.</p>
+            <h3>Scope</h3>
+            <p>Local vs global variables and side effects.</p>
           </div>
           <div class="card">
-            <h3>Error handling</h3>
-            <p><strong>Baby:</strong> What to do if the recipe fails.</p>
-            <p><strong>Builder:</strong> Use try/except to handle bad input safely.</p>
+            <h3>Documentation</h3>
+            <p>Docstrings to explain how functions work.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>4</span>Data pipeline example</div>
+        <div class="section-title"><span>6</span>Files, paths, and IO</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Reading & writing files</h3>
+            <p>Open files safely with context managers.</p>
+          </div>
+          <div class="card">
+            <h3>CSV and JSON</h3>
+            <p>Common formats for data exchange.</p>
+          </div>
+          <div class="card">
+            <h3>Path handling</h3>
+            <p>Use pathlib for reliable paths across OSes.</p>
+          </div>
+          <div class="card">
+            <h3>Error handling</h3>
+            <p>try/except to prevent crashes and log failures.</p>
+          </div>
+        </div>
+        <div class="note" style="margin-top: 16px;">
+          <strong>Real-world connection:</strong> Most automation work is reading messy files and producing clean outputs.
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>7</span>Data analysis with pandas</div>
         <div class="code-block">from pathlib import Path
 import pandas as pd
 
@@ -126,15 +198,15 @@ clean = raw.dropna(subset=["region", "sales"]).copy()
 summary = clean.groupby("region")["sales"].sum().reset_index()
 summary.to_csv("master_report.csv", index=False)
 </div>
-        <p class="footer">Explain schema checks and type casting before grouping.</p>
+        <p class="footer">Validate schema and data types before aggregation.</p>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>5</span>Automation projects</div>
+        <div class="section-title"><span>8</span>Automation patterns</div>
         <div class="grid three">
           <div class="card">
             <h3>Batch reporting</h3>
-            <p>Open 500 Excel files, extract totals, and compile a master report.</p>
+            <p>Process hundreds of files into one report.</p>
           </div>
           <div class="card">
             <h3>File monitoring</h3>
@@ -148,38 +220,51 @@ summary.to_csv("master_report.csv", index=False)
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>6</span>Environment setup</div>
-        <div class="code-block">python -m venv .venv
-.venv\Scripts\activate
-pip install pandas numpy jupyter pytest
-</div>
-        <p class="footer">Teach why isolation prevents dependency conflicts.</p>
-      </section>
-
-      <section class="section reveal">
-        <div class="section-title"><span>7</span>Advanced topics (for mastery)</div>
+        <div class="section-title"><span>9</span>Testing and quality</div>
         <div class="grid two">
           <div class="card">
-            <h3>Performance</h3>
-            <p>Vectorize operations, avoid Python loops when possible.</p>
+            <h3>Unit tests</h3>
+            <p>Validate transformations, schema, and edge cases.</p>
           </div>
           <div class="card">
             <h3>Logging</h3>
-            <p>Track runtime events and errors for debugging and audits.</p>
+            <p>Track runtime events and errors for audits.</p>
           </div>
           <div class="card">
-            <h3>Testing</h3>
-            <p>Write unit tests for transformations and data validation.</p>
+            <h3>Data validation</h3>
+            <p>Check for missing fields, outliers, and invalid types.</p>
           </div>
           <div class="card">
-            <h3>Packaging</h3>
-            <p>Turn scripts into reusable tools with a CLI entry point.</p>
+            <h3>Performance</h3>
+            <p>Vectorize operations and avoid slow loops.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>8</span>Less common but useful</div>
+        <div class="section-title"><span>10</span>Packaging and deployment</div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Virtual environments</h3>
+            <p>Isolate dependencies to prevent conflicts.</p>
+          </div>
+          <div class="card">
+            <h3>CLI tools</h3>
+            <p>Provide one-command execution for users.</p>
+          </div>
+          <div class="card">
+            <h3>Scheduling</h3>
+            <p>Run jobs daily with Task Scheduler or cron.</p>
+          </div>
+          <div class="card">
+            <h3>Documentation</h3>
+            <p>Explain setup, usage, and outputs clearly.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-title"><span>11</span>Advanced & less common concepts</div>
         <div class="grid two">
           <div class="card">
             <h3>Async IO</h3>
@@ -191,26 +276,27 @@ pip install pandas numpy jupyter pytest
           </div>
           <div class="card">
             <h3>Context managers</h3>
-            <p>Safely open/close files and connections.</p>
+            <p>Safely open/close resources.</p>
           </div>
           <div class="card">
             <h3>Dataclasses</h3>
-            <p>Cleanly model data objects.</p>
+            <p>Clean modeling for structured data.</p>
           </div>
         </div>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>9</span>Misconceptions to correct</div>
+        <div class="section-title"><span>12</span>Misconceptions to correct</div>
         <ul class="list">
-          <li>“Python is slow.” Proper libraries and vectorization are fast.</li>
+          <li>“Python is slow.” Vectorized libraries are fast.</li>
           <li>“Scripts don’t need tests.” Tests prevent silent data errors.</li>
           <li>“Copy-paste is fine.” Reuse functions to reduce mistakes.</li>
+          <li>“One script is enough.” Production tools need logging and docs.</li>
         </ul>
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>10</span>Guided labs</div>
+        <div class="section-title"><span>13</span>Guided labs</div>
         <div class="grid two">
           <div class="card">
             <h3>Lab 1: CSV merger</h3>
@@ -232,13 +318,14 @@ pip install pandas numpy jupyter pytest
       </section>
 
       <section class="section reveal">
-        <div class="section-title"><span>11</span>Capstone</div>
+        <div class="section-title"><span>14</span>Capstone</div>
         <p>Deliver a Python automation toolkit that includes:</p>
         <ul class="list">
           <li>Config-driven data ingestion</li>
           <li>Quality checks and error reports</li>
           <li>CLI entry point for one-command execution</li>
           <li>Unit tests for critical transformations</li>
+          <li>Clear documentation and deployment steps</li>
         </ul>
       </section>
 
@@ -249,4 +336,3 @@ pip install pandas numpy jupyter pytest
   </div>
 </body>
 </html>
-
