@@ -11,6 +11,7 @@
     <aside class="sidebar">
       <div class="brand">Learning Path</div>
       <div class="tagline">From first steps to mastery</div>
+      <button class="menu-toggle" type="button" aria-label="Toggle menu">? Menu</button>
       <nav class="nav">
         <a href="index.html">Overview Roadmap</a>
         <a href="basics.html">Module 01: Computer Architecture</a>
@@ -24,6 +25,17 @@
         <a href="projects.html">Projects & Real-World</a>
         <a href="resources.html">Tools & Resources</a>
       </nav>
+            <div class="tutor-card">
+        <div class="tutor-title">Tutor · WabukoWabuko</div>
+        <div class="tutor-role">Computer Scientist · Data Scientist · ML Expert · AI Enthusiast · Software Developer</div>
+        <div class="tutor-links">
+          <a href="mailto:basilwabbs@gmail.com">Email</a>
+          <a href="https://wabuko-portfolio.vercel.app" target="_blank" rel="noreferrer">Portfolio</a>
+          <a href="tel:+254740750403">Call</a>
+          <a href="https://wa.me/254740750403" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </div>
+
       <div class="meta">Use this for weekly planning and pacing.</div>
     </aside>
 
@@ -132,8 +144,23 @@
       </footer>
     </main>
   </div>
-</body>
-</html>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('nav-open');
+      });
+    }
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+      });
+    });
+  </script>
+</body></html>
+
+
+
 
 
 

@@ -353,6 +353,64 @@ img {
   margin-top: 10px;
 }
 
+.menu-toggle {
+  display: none;
+  width: 100%;
+  margin: 10px 0 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.35);
+  color: #e2e8f0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.tutor-card {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #e2e8f0;
+}
+
+.tutor-card .tutor-title {
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.tutor-card .tutor-role {
+  font-size: 0.85rem;
+  color: #cbd5f5;
+  margin-bottom: 10px;
+}
+
+.tutor-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tutor-links a {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.tutor-links a:hover {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
 .developer {
   margin-top: 18px;
   padding: 16px 18px;
@@ -449,6 +507,21 @@ img {
 
   .sidebar {
     position: relative;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  body.nav-open .nav {
+    display: block;
   }
 }
 
